@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apollo Hosting - VPS Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f6fa;
+            color: #222;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #1a365d;
+            padding: 0 0 0 0;
+            box-shadow: 0 2px 12px rgba(44,62,80,0.07);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar-logo {
+            font-size: 1.7em;
+            font-weight: bold;
+            color: #fff;
+            margin-right: 40px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+        .navbar-logo i {
+            margin-right: 10px;
+            color: #63b3ed;
+        }
+        .navbar-links {
+            display: flex;
+            gap: 24px;
+        }
+        .navbar-link {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 1.08em;
+            font-weight: 500;
+            padding: 18px 0;
+            border-bottom: 2px solid transparent;
+            transition: color 0.18s, border-bottom 0.18s;
+            position: relative;
+        }
+        .navbar-link.active,
+        .navbar-link:hover {
+            color: #63b3ed;
+            border-bottom: 2.5px solid #63b3ed;
+        }
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 20px 40px 20px;
+            background: linear-gradient(120deg, #2b6cb0 60%, #63b3ed 100%);
+            color: #fff;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            color: #2b6cb0;
+            font-weight: bold;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 12px rgba(44,62,80,0.10);
+        }
+        .company-name {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .slogan {
+            font-size: 1.3em;
+            color: #e2e8f0;
+            margin-bottom: 30px;
+        }
+        .hero-img {
+            border-radius: 18px;
+            box-shadow: 0 2px 12px rgba(44,62,80,0.10);
+            margin-bottom: 0;
+            width: 350px;
+            max-width: 90vw;
+        }
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px 30px 20px;
+            display: none;
+        }
+        section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .section-title {
+            font-size: 1.7em;
+            font-weight: bold;
+            margin-bottom: 18px;
+            color: #2b6cb0;
+            text-align: center;
+        }
+        .desc, .section-content {
+            max-width: 800px;
+            text-align: center;
+            margin: 0 auto 20px auto;
+            color: #444;
+        }
+        .team {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .team-member {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .team-photo {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            background: #e2e8f0;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 3px solid #63b3ed;
+        }
+        .role {
+            font-size: 1em;
+            color: #4a5568;
+            margin-top: 4px;
+            text-align: center;
+        }
+        .plans {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 40px 0 20px 0;
+        }
+        .plan-card {
+            background: #fff;
+            border-radius: 22px;
+            box-shadow: 0 2px 16px rgba(44,62,80,0.10);
+            padding: 32px 28px 28px 28px;
+            min-width: 220px;
+            max-width: 260px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            transition: transform 0.15s;
+            border: 1.5px solid #e2e8f0;
+        }
+        .plan-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 6px 24px rgba(44,62,80,0.14);
+            border-color: #63b3ed;
+        }
+        .plan-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2b6cb0;
+            margin-bottom: 10px;
+        }
+        .plan-price {
+            font-size: 2em;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 12px;
+        }
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 18px 0;
+            color: #4a5568;
+            font-size: 1em;
+        }
+        .plan-features li {
+            margin-bottom: 6px;
+        }
+        .plan-btn {
+            background: #2b6cb0;
+            color: #fff;
+            border: none;
+            border-radius: 18px;
+            padding: 10px 28px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .plan-btn:hover {
+            background: #225080;
+        }
+        .game-hosting {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+            margin: 40px 0 20px 0;
+        }
+        .game-card {
+            background: #fff;
+            border-radius: 22px;
+            box-shadow: 0 2px 16px rgba(44,62,80,0.10);
+            padding: 32px 28px 28px 28px;
+            min-width: 220px;
+            max-width: 260px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1.5px solid #e2e8f0;
+            transition: transform 0.15s;
+        }
+        .game-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 6px 24px rgba(44,62,80,0.14);
+            border-color: #63b3ed;
+        }
+        .game-title {
+            font-size: 1.15em;
+            font-weight: bold;
+            color: #2b6cb0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .game-img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            background: #f4f6fa;
+            border: 1px solid #e2e8f0;
+        }
+        .game-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 14px 0;
+            color: #4a5568;
+            font-size: 0.98em;
+        }
+        .game-features li {
+            margin-bottom: 5px;
+        }
+        .game-btns {
+            display: flex;
+            gap: 10px;
+        }
+        .game-btn {
+            background: #2b6cb0;
+            color: #fff;
+            border: none;
+            border-radius: 14px;
+            padding: 8px 18px;
+            font-size: 0.98em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .game-btn:hover {
+            background: #225080;
+        }
+        .footer {
+            margin: 60px 0 0 0;
+            color: #a0aec0;
+            font-size: 0.95em;
+            text-align: center;
+        }
+        .testimonials, .faq, .security, .partners {
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            padding: 30px 20px;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 2px 12px rgba(44,62,80,0.07);
+        }
+        .testimonial {
+            margin-bottom: 18px;
+            font-style: italic;
+            color: #2b6cb0;
+        }
+        .faq-item {
+            margin-bottom: 14px;
+        }
+        .faq-q {
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+        .faq-a {
+            margin-left: 10px;
+        }
+        .security-list, .partners-list {
+            list-style: disc inside;
+            color: #444;
+        }
+        .partners-logo {
+            height: 32px;
+            margin: 0 10px 10px 0;
+            vertical-align: middle;
+        }
+        @media (max-width: 900px) {
+            .plans { flex-direction: column; align-items: center; }
+            .team { flex-direction: column; gap: 24px; }
+            .navbar-links { gap: 12px; }
+            .navbar-logo { margin-right: 10px; }
+        }
+        /* Extra: highlight buttons, icons, etc. */
+        .plan-title i, .section-title i {
+            color: #63b3ed;
+            margin-right: 7px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo"><i class="fa-solid fa-server"></i>Apollo Hosting</div>
+        <div class="navbar-links">
+            <a href="#" class="navbar-link active" data-section="home">Home</a>
+            <a href="#" class="navbar-link" data-section="team">Team</a>
+            <a href="#" class="navbar-link" data-section="services">Servizi</a>
+            <a href="#" class="navbar-link" data-section="plans">Piani VPS</a>
+            <a href="#" class="navbar-link" data-section="gamehosting">Game Hosting</a>
+            <a href="#" class="navbar-link" data-section="market">Mercato</a>
+            <a href="#" class="navbar-link" data-section="competition">Competizione</a>
+            <a href="#" class="navbar-link" data-section="development">Sviluppo</a>
+            <a href="#" class="navbar-link" data-section="pricing">Prezzi</a>
+            <a href="#" class="navbar-link" data-section="future">Futuro</a>
+            <a href="#" class="navbar-link" data-section="investment">Investimenti</a>
+        </div>
+    </nav>
+
+    <header id="home" class="active-section">
+        <div class="logo">
+            <img src="img/logo.png" alt="Apollo Hosting Logo" style="width: 100px; height: 100px">
+        </div>
+        <div class="company-name">Apollo Hosting</div>
+        <div class="slogan">Empowering Your Cloud Journey</div>
+        <img class="hero-img" src="img/hero.jpg" alt="Cloud Servers">
+        <div class="desc" style="margin-top:30px;">
+            <b>Benvenuto su Apollo Hosting!</b><br>
+            Siamo il partner ideale per la tua infrastruttura cloud e gaming.<br>
+            <ul style="margin: 18px auto 0 auto; max-width: 600px; color:#000000; text-align:left;">
+                <li>Soluzioni VPS scalabili, sicure e performanti</li>
+                <li>Hosting per giochi con pannello di gestione avanzato</li>
+                <li>Supporto tecnico 24/7 e SLA garantiti</li>
+                <li>Data center green e automazione intelligente</li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="team">
+        <div class="section-title"><i class="fa-solid fa-users"></i>Our Team</div>
+        <div class="team">
+            <div class="team-member">
+                <img class="team-photo" src="img/archer.jpg" alt="Founder">
+                <div class="role"><b>Samuele L. Carcerano</b><br>Founder & Developer<br><span style="font-size:0.95em;color:#2b6cb0;">Visione e strategia</span></div>
+            </div>
+            <div class="team-member">
+                <img class="team-photo" src="img/horea.jpg" alt="Co-Founder">
+                <div class="role"><b>Horea Groza</b><br>Co-Founder & Researcher<br><span style="font-size:0.95em;color:#2b6cb0;">Architettura Cloud</span></div>
+            </div>
+            <div class="team-member">
+                <img class="team-photo" src="img/team3.jpg" alt="Researcher">
+                <div class="role"><b>Mircia Balit</b><br>Co-Founder & Researcher<br><span style="font-size:0.95em;color:#2b6cb0;">Automazione & Sicurezza</span></div>
+            </div>
+            <div class="team-member">
+                <img class="team-photo" src="img/tomer.jpg" alt="Designer">
+                <div class="role"><b>Tomer Katz</b><br>Co-Founder & Designer<br><span style="font-size:0.95em;color:#2b6cb0;">Comunicazione & Brand</span></div>
+            </div>
+        </div>
+        <div class="desc">
+            <b>Il nostro team unisce esperienza internazionale, passione per la tecnologia e attenzione al cliente.</b>
+            <br>Collaboriamo con esperti di sicurezza, sviluppatori e consulenti per offrirti sempre il meglio.
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="section-title"><i class="fa-solid fa-cogs"></i>Missione & Servizi</div>
+        <div class="desc">
+            <b>Obiettivo:</b> Fornire soluzioni VPS affidabili, scalabili e convenienti per aziende, sviluppatori e gamer.<br><br>
+            <b>Servizi principali:</b>
+            <ul style="max-width:600px;margin:0 auto;text-align:left;">
+                <li>VPS Linux e Windows con deploy istantaneo</li>
+                <li>Hosting per giochi (Minecraft, Rust, SCP:SL, ARK, CS2...)</li>
+                <li>Backup automatici e snapshot</li>
+                <li>Firewall, DDoS Protection, VPN dedicate</li>
+                <li>Gestione DNS, IP failover, API per automazione</li>
+                <li>Supporto tecnico italiano ed europeo 24/7</li>
+                <li>Monitoraggio risorse e alert proattivi</li>
+            </ul>
+        </div>
+        <!-- Modifica l'immagine servizi qui: img/services.jpg -->
+        <img src="img/services.jpg" alt="VPS Product" width="350" style="border-radius:14px;box-shadow:0 2px 8px rgba(44,62,80,0.08);margin:20px auto;">
+    </section>
+
+    <section id="plans">
+        <div class="section-title"><i class="fa-solid fa-layer-group"></i>Piani VPS</div>
+        <div class="plans">
+            <div class="plan-card">
+                <div class="plan-title"><i class="fa-solid fa-seedling"></i>Starter</div>
+                <div class="plan-price">€5<span style="font-size:0.6em;">/mese</span></div>
+                <ul class="plan-features">
+                    <li>1 vCPU</li>
+                    <li>1GB RAM DDR4 ECC</li>
+                    <li>25GB SSD NVMe</li>
+                    <li>1TB Traffico</li>
+                    <li>Supporto 24/7</li>
+                    <li>Backup settimanale</li>
+                </ul>
+                <button class="plan-btn">Scegli</button>
+            </div>
+            <div class="plan-card">
+                <div class="plan-title"><i class="fa-solid fa-bolt"></i>Pro</div>
+                <div class="plan-price">€12<span style="font-size:0.6em;">/mese</span></div>
+                <ul class="plan-features">
+                    <li>2 vCPU</li>
+                    <li>4GB RAM DDR4 ECC</li>
+                    <li>80GB SSD NVMe</li>
+                    <li>4TB Traffico</li>
+                    <li>Supporto Prioritario</li>
+                    <li>Snapshot illimitati</li>
+                </ul>
+                <button class="plan-btn">Scegli</button>
+            </div>
+            <div class="plan-card">
+                <div class="plan-title"><i class="fa-solid fa-gem"></i>Business</div>
+                <div class="plan-price">€25<span style="font-size:0.6em;">/mese</span></div>
+                <ul class="plan-features">
+                    <li>4 vCPU</li>
+                    <li>8GB RAM DDR4 ECC</li>
+                    <li>160GB SSD NVMe</li>
+                    <li>8TB Traffico</li>
+                    <li>Supporto Premium</li>
+                    <li>IP dedicato incluso</li>
+                </ul>
+                <button class="plan-btn">Scegli</button>
+            </div>
+        </div>
+        <div class="desc">
+            <b>Personalizza il tuo VPS:</b> scegli sistema operativo, risorse, storage aggiuntivo e servizi gestiti.<br>
+            <b>Upgrade e downgrade</b> in tempo reale dal pannello clienti.
+        </div>
+    </section>
+
+    <section id="gamehosting">
+        <div class="section-title"><i class="fa-solid fa-gamepad"></i>Game Hosting & Server Management</div>
+        <div class="desc">
+            <b>Hosting professionale per i tuoi giochi preferiti!</b><br>
+            Pannello di gestione semplice, modpack, backup automatici, protezione DDoS e supporto esperto.<br>
+            <span style="color:#2b6cb0;">Scegli il tuo gioco e inizia subito!</span>
+        </div>
+        <div class="game-hosting">
+            <!-- Modifica le immagini dei giochi in img/minecraft.png, rust.png, scpsl.png, ecc -->
+            <div class="game-card">
+                <img class="game-img" src="img/mc.png" alt="Minecraft">
+                <div class="game-title"><i class="fa-solid fa-hammer"></i> Minecraft</div>
+                <ul class="game-features">
+                    <li>Installazione modpack 1-click</li>
+                    <li>Console web & FTP</li>
+                    <li>Backup automatici</li>
+                    <li>Slot illimitati</li>
+                </ul>
+                <div class="game-btns">
+                    <button class="game-btn">Acquista</button>
+                    <button class="game-btn" style="background:#63b3ed;">Gstisci</button>
+                </div>
+            </div>
+            <div class="game-card">
+                <img class="game-img" src="img/rust.png" alt="Rust">
+                <div class="game-title"><i class="fa-solid fa-fire"></i> Rust</div>
+                <ul class="game-features">
+                    <li>Oxide/UMod support</li>
+                    <li>Auto-restart & update</li>
+                    <li>Protezione DDoS</li>
+                    <li>Gestione plugin</li>
+                </ul>
+                <div class="game-btns">
+                    <button class="game-btn">Acquista</button>
+                    <button class="game-btn" style="background:#63b3ed;">Gestisci</button>
+                </div>
+            </div>
+            <div class="game-card">
+                <img class="game-img" src="img/scpsl.png" alt="SCP:SL">
+                <div class="game-title"><i class="fa-solid fa-flask"></i> SCP:SL</div>
+                <ul class="game-features">
+                    <li>Installazione plugin rapida</li>
+                    <li>Console live</li>
+                    <li>Backup automatici</li>
+                    <li>Slot personalizzabili</li>
+                </ul>
+                <div class="game-btns">
+                    <button class="game-btn">Acquista</button>
+                    <button class="game-btn" style="background:#63b3ed;">Gestisci</button>
+                </div>
+            </div>
+            <div class="game-card">
+                <img class="game-img" src="img/ark.png" alt="ARK">
+                <div class="game-title"><i class="fa-solid fa-volcano"></i> ARK: Survival Evolved</div>
+                <ul class="game-features">
+                    <li>Cluster multi-mappa</li>
+                    <li>Mod Steam Workshop</li>
+                    <li>Backup automatici</li>
+                    <li>Prestazioni elevate</li>
+                </ul>
+                <div class="game-btns">
+                    <button class="game-btn">Acquista</button>
+                    <button class="game-btn" style="background:#63b3ed;">Gestisci</button>
+                </div>
+            </div>
+            <div class="game-card">
+                <img class="game-img" src="img/cs2.png" alt="CS2">
+                <div class="game-title"><i class="fa-solid fa-gun"></i> Counter-Strike 2</div>
+                <ul class="game-features">
+                    <li>Tickrate 128+</li>
+                    <li>Gestione mappe e plugin</li>
+                    <li>Anti-cheat avanzato</li>
+                    <li>Supporto tornei</li>
+                </ul>
+                <div class="game-btns">
+                    <button class="game-btn">Acquista</button>
+                    <button class="game-btn" style="background:#63b3ed;">Gestisci</button>
+                </div>
+            </div>
+        </div>
+        <div class="desc">
+            <b>Pannello di gestione:</b> Avvia, ferma, aggiorna, configura e monitora i tuoi server in autonomia.<br>
+            <b>Assistenza dedicata</b> per community e streamer!
+        </div>
+    </section>
+
+    <section id="market">
+        <div class="section-title"><i class="fa-solid fa-chart-line"></i>Il nostro Mercato</div>
+        <div class="desc">
+            I nostri clienti sono startup, PMI, sviluppatori, gamer, community e aziende che cercano infrastrutture cloud e gaming affidabili.<br>
+            <ul style="max-width:600px;margin:0 auto;text-align:left;">
+                <li>Startup tech e SaaS</li>
+                <li>Web agency e freelance</li>
+                <li>Community gaming e streamer</li>
+                <li>Progetti di e-learning e smart working</li>
+                <li>App mobile e microservizi</li>
+            </ul>
+            <!-- Modifica l'immagine mercato qui: img/market.jpg -->
+            <img src="img/market.jpg" alt="Market" width="220" style="border-radius:12px;">
+        </div>
+    </section>
+
+    <section id="competition">
+        <div class="section-title"><i class="fa-solid fa-trophy"></i>Competizione</div>
+        <div class="desc">
+            Competiamo con provider come DigitalOcean, Vultr, Linode, OVH, Hetzner e altri.<br>
+            <b>Il nostro vantaggio:</b>
+            <ul style="max-width:600px;margin:0 auto;text-align:left;">
+                <li>Supporto umano e personalizzato</li>
+                <li>Prezzi trasparenti e senza sorprese</li>
+                <li>Performance ottimizzate per l'Europa</li>
+                <li>Data center green e sostenibili</li>
+                <li>Innovazione continua (AI, automazione, API)</li>
+            </ul>
+            <!-- Modifica l'immagine competizione qui: img/competition.jpg -->
+            <img src="img/competition.jpg" alt="Competition" width="220" style="border-radius:12px;">
+        </div>
+    </section>
+
+    <section id="development">
+        <div class="section-title"><i class="fa-solid fa-chart-bar"></i>Sviluppo Business</div>
+        <div class="desc">
+            Dal lancio, abbiamo raggiunto 200+ clienti attivi, 50+ community gaming e ampliato la nostra infrastruttura in 3 data center.<br>
+            <b>Prossimi passi:</b>
+            <ul style="max-width:600px;margin:0 auto;text-align:left;">
+                <li>Lancio servizi gestiti (monitoraggio, patch, sicurezza)</li>
+                <li>Espansione in nuove regioni (Germania, Francia, USA)</li>
+                <li>Investimenti in automazione e AI</li>
+                <li>Partnership con software house e streamer</li>
+            </ul>
+            <!-- Modifica l'immagine sviluppo qui: img/growth.jpg -->
+            <img src="img/growth.jpg" alt="Growth" width="220" style="border-radius:12px;">
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="section-title"><i class="fa-solid fa-euro-sign"></i>Prezzi & Modello di Ricavo</div>
+        <div class="desc">
+            I piani VPS partono da <b>€5/mese</b>.<br>
+            Ricavi da abbonamenti, add-on, servizi gestiti e game hosting.<br>
+            <b>Modello:</b> pay-as-you-go, senza vincoli, upgrade/downgrade istantanei.<br>
+            <b>Pagamenti:</b> Carta, PayPal, Bonifico, Crypto.<br>
+            <b>Sconti per studenti, no-profit e community!</b>
+        </div>
+    </section>
+
+    <section id="future">
+        <div class="section-title"><i class="fa-solid fa-forward"></i>Piani Futuri</div>
+        <div class="desc">
+            <ul style="max-width:600px;margin:0 auto;text-align:left;">
+                <li>Espansione in Nord America e Asia</li>
+                <li>Introduzione di gestione server con AI e automazione</li>
+                <li>Nuovi servizi: CDN, object storage, backup cloud</li>
+                <li>Investimenti in data center green e partnership universitarie</li>
+                <li>Marketplace per plugin/mod e API pubbliche</li>
+            </ul>
+            <!-- Modifica l'immagine futuro qui: img/future.jpg -->
+            <img src="img/future.jpg" alt="Future" width="220" style="border-radius:12px;">
+        </div>
+    </section>
+
+    <section id="investment">
+        <div class="section-title"><i class="fa-solid fa-coins"></i>Finanziamenti & Investimenti</div>
+        <div class="desc">
+            <b>Capitale attuale:</b> €50.000<br>
+            <b>Richiesta:</b> €100.000 per infrastruttura, marketing e sviluppo software.<br>
+            <b>Perché investire?</b>
+            <ul style="max-width:600px;margin:0 auto;text-align:left;">
+                <li>Crescita comprovata e clienti fidelizzati</li>
+                <li>Modello scalabile e margini elevati</li>
+                <li>Mercato gaming e cloud in forte espansione</li>
+                <li>Team esperto e innovativo</li>
+            </ul>
+            <!-- Modifica l'immagine investimenti qui: img/investment.jpg -->
+            <img src="img/investment.jpg" alt="Investment" width="220" style="border-radius:12px;">
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="section-title"><i class="fa-solid fa-star"></i>Testimonianze Clienti</div>
+        <div class="testimonial">"Apollo Hosting ha rivoluzionato la gestione dei nostri server Minecraft. Supporto rapidissimo!"<br><b>- Luca, Admin Community MC</b></div>
+        <div class="testimonial">"Performance VPS top, prezzi chiari e assistenza sempre disponibile. Consigliato!"<br><b>- Sara, Web Agency</b></div>
+        <div class="testimonial">"Abbiamo migrato 5 server Rust senza downtime. Pannello intuitivo e backup automatici!"<br><b>- Marco, Clan Rust</b></div>
+    </section>
+
+    <section class="security">
+        <div class="section-title"><i class="fa-solid fa-shield-halved"></i>Sicurezza & Affidabilità</div>
+        <ul class="security-list">
+            <li>Firewall avanzato e protezione DDoS su ogni server</li>
+            <li>Backup automatici giornalieri e snapshot manuali</li>
+            <li>Monitoraggio 24/7 e alert proattivi</li>
+            <li>Data center certificati ISO 27001 in Europa</li>
+            <li>Accesso sicuro tramite 2FA e VPN</li>
+        </ul>
+    </section>
+
+    <section class="faq">
+        <div class="section-title"><i class="fa-solid fa-question-circle"></i>FAQ</div>
+        <div class="faq-item">
+            <span class="faq-q">Posso cambiare risorse al mio VPS in qualsiasi momento?</span>
+            <span class="faq-a">Sì, puoi fare upgrade/downgrade istantaneamente dal pannello clienti.</span>
+        </div>
+        <div class="faq-item">
+            <span class="faq-q">Offrite supporto per plugin/mod nei server di gioco?</span>
+            <span class="faq-a">Certo! Il nostro team ti aiuta con installazione e troubleshooting.</span>
+        </div>
+        <div class="faq-item">
+            <span class="faq-q">I dati sono sicuri?</span>
+            <span class="faq-a">Tutti i dati sono protetti da backup, firewall e storage ridondato.</span>
+        </div>
+        <div class="faq-item">
+            <span class="faq-q">Posso provare gratis?</span>
+            <span class="faq-a">Sì, offriamo trial su richiesta per VPS e game hosting!</span>
+        </div>
+    </section>
+
+    <section class="partners">
+        <div class="section-title"><i class="fa-solid fa-handshake"></i>Partner & Collaborazioni</div>
+        <ul class="partners-list">
+            <li>Partner ufficiale <img src="img/partner1.png" class="partners-logo" alt="Partner1"> per soluzioni di sicurezza</li>
+            <li>Collaborazione con <img src="img/partner2.png" class="partners-logo" alt="Partner2"> per automazione e monitoring</li>
+            <li>Supporto a community e streamer italiani</li>
+        </ul>
+    </section>
+
+    <div class="footer">
+        &copy; 2025 Apollo Hosting. All rights reserved.<br>
+    </div>
+    <script>
+        // SPA navigation logic
+        const links = document.querySelectorAll('.navbar-link');
+        const sections = {
+            home: document.querySelector('header'),
+            team: document.getElementById('team'),
+            services: document.getElementById('services'),
+            plans: document.getElementById('plans'),
+            gamehosting: document.getElementById('gamehosting'),
+            market: document.getElementById('market'),
+            competition: document.getElementById('competition'),
+            development: document.getElementById('development'),
+            pricing: document.getElementById('pricing'),
+            future: document.getElementById('future'),
+            investment: document.getElementById('investment')
+        };
+
+        function showSection(section) {
+            Object.entries(sections).forEach(([key, el]) => {
+                if (key === section) {
+                    el.classList.add('active-section');
+                    if (el.tagName === 'SECTION') el.classList.add('active');
+                    else el.style.display = 'flex';
+                } else {
+                    el.classList.remove('active-section');
+                    if (el.tagName === 'SECTION') el.classList.remove('active');
+                    else el.style.display = 'none';
+                }
+            });
+            links.forEach(link => {
+                link.classList.toggle('active', link.dataset.section === section);
+            });
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        links.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                showSection(link.dataset.section);
+            });
+        });
+
+        // Show home by default
+        showSection('home');
+    </script>
+</body>
+</html>
