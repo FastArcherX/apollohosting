@@ -950,7 +950,7 @@ nav {
 }
 
 .footer-col {
-    flex: 0 1 250px; /* Larghezza minima e massima per colonna */
+    flex: 0 1 230px; /* Larghezza minima e massima per colonna */
     display: flex;
     flex-direction: column;
     align-items: center;
