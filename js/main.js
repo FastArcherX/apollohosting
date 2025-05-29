@@ -235,13 +235,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (dropdownToggle && dropdownMenu) {
         dropdownToggle.addEventListener('click', function(e) {
             e.preventDefault();
-            dropdown.classList.toggle('open');
+            const isOpen = dropdown.classList.toggle('open');
+            if (isOpen) {
+                // Blocca lo scroll della pagina solo su mobile
+                if (window.innerWidth < 900) {
+                    document.body.style.overflow = 'hidden';
+                }
+            } else {
+                document.body.style.overflow = '';
+            }
         });
 
         // Chiudi il dropdown quando clicchi fuori
         document.addEventListener('click', function(e) {
             if (!dropdown.contains(e.target) && !e.target.classList.contains('dropdown-toggle')) {
                 dropdown.classList.remove('open');
+                document.body.style.overflow = '';
             }
         });
 
@@ -249,6 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dropdownMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 dropdown.classList.remove('open');
+                document.body.style.overflow = '';
             });
         });
     }
