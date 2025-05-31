@@ -143,30 +143,32 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('termsModal');
     const termsLinks = document.querySelectorAll('a[href="#terms"]');
-    const closeBtn = document.querySelector('.close-modal');
+    const closeBtn = modal ? modal.querySelector('.close-modal') : null;
 
     // Apri il modal quando si clicca sui link dei terms
-    termsLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            modal.style.display = "block";
-            document.body.style.overflow = "hidden"; // Previene lo scroll della pagina sottostante
+    if (modal && closeBtn) {
+        termsLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.style.display = "block";
+                document.body.style.overflow = "hidden"; // Previene lo scroll della pagina sottostante
+            });
         });
-    });
 
-    // Chiudi il modal quando si clicca sulla X
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto"; // Ripristina lo scroll della pagina
-    });
-
-    // Chiudi il modal quando si clicca fuori dal contenuto
-    window.addEventListener('click', function(e) {
-        if (e.target == modal) {
+        // Chiudi il modal quando si clicca sulla X
+        closeBtn.addEventListener('click', function() {
             modal.style.display = "none";
-            document.body.style.overflow = "auto";
-        }
-    });
+            document.body.style.overflow = "auto"; // Ripristina lo scroll della pagina
+        });
+
+        // Chiudi il modal quando si clicca fuori dal contenuto
+        window.addEventListener('click', function(e) {
+            if (e.target == modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+    }
 });
 
 // Gestione della navigazione
@@ -196,49 +198,51 @@ document.addEventListener('DOMContentLoaded', function() {
     // Riferimenti elementi DOM
     const supportLink = document.getElementById('supportLink');
     const supportModal = document.getElementById('supportModal');
-    const closeModalBtn = supportModal.querySelector('.close-modal');
+    const closeModalBtn = supportModal ? supportModal.querySelector('.close-modal') : null;
     const supportForm = document.getElementById('supportForm');
     const formSuccess = document.getElementById('formSuccess');
     
-    // Apri il modal quando viene clictato il link
-    supportLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        supportModal.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // Previene lo scrolling
-    });
-    
-    // Chiudi il modal quando viene cliccato il bottone X
-    closeModalBtn.addEventListener('click', function() {
-        supportModal.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Ripristina lo scrolling
-    });
-    
-    // Chiudi il modal quando viene cliccato fuori dal contenuto
-    window.addEventListener('click', function(e) {
-        if (e.target === supportModal) {
-            supportModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    });
-    
-    // Gestione invio form
-    supportForm.addEventListener('submit', function(e) {
-        // Formspree gestirà l'invio, ma possiamo aggiungere funzionalità extra
-        
-        // Mostra il messaggio di successo dopo l'invio
-        supportForm.addEventListener('formspree:success', function() {
-            supportForm.style.display = 'none';
-            formSuccess.style.display = 'block';
-            
-            // Resetta il form dopo 3 secondi
-            setTimeout(function() {
-                supportForm.reset();
-            }, 3000);
+    if (supportLink && supportModal && closeModalBtn && supportForm && formSuccess) {
+        // Apri il modal quando viene clictato il link
+        supportLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            supportModal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Previene lo scrolling
         });
-    });
+        
+        // Chiudi il modal quando viene cliccato il bottone X
+        closeModalBtn.addEventListener('click', function() {
+            supportModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Ripristina lo scrolling
+        });
+        
+        // Chiudi il modal quando viene cliccato fuori dal contenuto
+        window.addEventListener('click', function(e) {
+            if (e.target === supportModal) {
+                supportModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Gestione invio form
+        supportForm.addEventListener('submit', function(e) {
+            // Formspree gestirà l'invio, ma possiamo aggiungere funzionalità extra
+            
+            // Mostra il messaggio di successo dopo l'invio
+            supportForm.addEventListener('formspree:success', function() {
+                supportForm.style.display = 'none';
+                formSuccess.style.display = 'block';
+                
+                // Resetta il form dopo 3 secondi
+                setTimeout(function() {
+                    supportForm.reset();
+                }, 3000);
+            });
+        });
+    }
 });
 
-// Dropdown "Altro" mobile/desktop: click per aprire/chiudere, chiudi su click fuori o su voce
+// Dropdown "More" desktop: click per aprire/chiudere, chiudi su click fuori o su voce
 document.addEventListener('DOMContentLoaded', () => {
     const dropdown = document.querySelector('.nav-links .dropdown');
     const dropdownToggle = dropdown ? dropdown.querySelector('.dropdown-toggle') : null;
@@ -246,28 +250,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (dropdownToggle && dropdownMenu) {
         dropdownToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            const isOpen = dropdown.classList.toggle('open');
-            if (isOpen && window.innerWidth < 900) {
-                document.body.classList.add('no-scroll');
-            } else {
-                document.body.classList.remove('no-scroll');
+            // Solo su desktop (>900px)
+            if (window.innerWidth > 900) {
+                e.preventDefault();
+                // Chiudi altri dropdown aperti (se presenti)
+                document.querySelectorAll('.nav-links .dropdown.open').forEach(d => {
+                    if (d !== dropdown) d.classList.remove('open');
+                });
+                dropdown.classList.toggle('open');
             }
         });
 
-        // Chiudi il dropdown quando clicchi fuori
-        document.addEventListener('click', function(e) {
-            if (!dropdown.contains(e.target) && !e.target.classList.contains('dropdown-toggle')) {
-                dropdown.classList.remove('open');
-                document.body.classList.remove('no-scroll');
+        // Chiudi il dropdown quando clicchi fuori (solo desktop)
+        document.addEventListener('mousedown', function(e) {
+            if (window.innerWidth > 900) {
+                if (dropdown.classList.contains('open') && !dropdown.contains(e.target)) {
+                    dropdown.classList.remove('open');
+                }
             }
         });
 
-        // Chiudi il dropdown dopo click su una voce
+        // Chiudi il dropdown dopo click su una voce (solo desktop)
         dropdownMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                dropdown.classList.remove('open');
-                document.body.classList.remove('no-scroll');
+                if (window.innerWidth > 900) {
+                    dropdown.classList.remove('open');
+                }
             });
         });
     }

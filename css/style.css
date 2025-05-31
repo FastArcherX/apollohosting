@@ -345,121 +345,6 @@ nav {
     font-size: 0.95rem;
 }
 
-/* Dropdown "Altro" - blocco centrale con sfondo sfocato, non trasparente */
-.nav-links .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%; /* Posiziona subito sotto il tasto "Altro" */
-    left: 0;   /* Allinea a sinistra rispetto al tasto */
-    transform: none; /* Rimuovi la traslazione centrale */
-    min-width: 220px;
-    max-width: 95vw;
-    background: #1a2336;
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-    padding: 0.7em 0;
-    z-index: 99999 !important; /* Assolutamente sopra tutto */
-    flex-direction: column;
-    align-items: stretch;
-    animation: fadeInMenu 0.2s;
-}
-
-.nav-links .dropdown.open .dropdown-menu {
-    display: flex;
-}
-
-.nav-links .dropdown-menu li {
-    list-style: none;
-    padding-left: 0;
-    position: static;
-}
-.nav-links .dropdown-menu li::before {
-    display: none !important;
-    content: none !important;
-}
-
-.nav-links .dropdown-menu a {
-    color: #fff;
-    padding: 0.85em 1.3em;
-    font-size: 1.07em;
-    border-radius: 8px;
-    margin: 0.1em 0;
-    transition: background 0.18s, color 0.18s;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-    /* Nessun bullet, nessun decoratore */
-}
-
-.nav-links .dropdown-menu a:hover {
-    background: rgba(37,99,235,0.13);
-    color: var(--accent-color);
-}
-
-/* Freccia decorativa sopra il blocco */
-.nav-links .dropdown-menu::before {
-    content: "";
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 0 10px 12px 10px;
-    border-style: solid;
-    border-color: transparent transparent #1a2336 transparent;
-    filter: blur(1px);
-}
-
-/* Mobile: menu sempre sotto il tasto "Altro" e largo quanto il tasto */
-@media (max-width: 900px) {
-    .nav-links .dropdown-menu {
-        position: absolute !important;
-        top: 100% !important;
-        left: 0 !important;
-        min-width: 100% !important;
-        max-width: none !important;
-        border-radius: 16px !important;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.25) !important;
-        background: #1a2336 !important;
-        z-index: 99999 !important; /* Ancora sopra tutto anche su mobile */
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0.7em 0 !important;
-        margin: 0 !important;
-        box-sizing: border-box !important;
-    }
-    .nav-links .dropdown.open .dropdown-menu {
-        display: flex;
-    }
-    .nav-links .dropdown-menu::before {
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-    }
-}
-
-/* Rimuovi ogni regola che forzano il menu a position: fixed e larghezza 100vw su mobile */
-@media (max-width: 900px) {
-    /* Disabilita completamente eventuali regole che forzano il menu a tutto schermo */
-    /* Se trovi ancora regole come queste, eliminale o commentale */
-    /*
-    .nav-links .dropdown-menu {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        min-width: 100vw !important;
-        max-width: 100vw !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-        padding: 2em 0 2em 0 !important;
-        background: rgba(15,23,42,0.98) !important;
-    }
-    */
-}
-
 /* Riduci padding verticale tra le sezioni */
 .page-section,
 .service-cards,
@@ -1112,26 +997,41 @@ nav {
 
 @media screen and (max-width: 768px) {
     .footer-container {
-        justify-content: center;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-        text-align: center;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+        text-align: center !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
     .footer-col {
-        align-items: center;
-        text-align: center;
+        width: 100% !important;
+        max-width: 100vw !important;
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 0 !important;
+        padding: 0 !important;
+    }
+    .footer-col ul {
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
+    .footer-col ul li {
+        margin-bottom: 0.7rem;
     }
 }
 
+/* Fix per padding e centratura su mobile extra small */
 @media screen and (max-width: 480px) {
     .footer-container {
-        grid-template-columns: 1fr;
-        justify-content: center;
-        text-align: center;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        gap: 1rem !important;
     }
     .footer-col {
-        align-items: center;
-        text-align: center;
+        padding: 0 !important;
+        margin-bottom: 0 !important;
     }
 }
 
@@ -1919,40 +1819,80 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
     }
 }
 
-/* Dropdown "Altro" SEMPRE sopra tutto su mobile: fixed e larghezza piena */
-@media (max-width: 900px) {
-  .nav-links .dropdown-menu {
-    position: fixed !important;
-    top: 70px !important; /* o l'altezza effettiva del tuo header/nav */
-    left: 0 !important;
-    right: 0 !important;
-    width: 100vw !important;
-    min-width: 0 !important;
-    max-width: 100vw !important;
-    border-radius: 0 !important;
-    margin: 0 !important;
-    z-index: 99999 !important;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25) !important;
-  }
-  .nav-links .dropdown.open .dropdown-menu {
-    display: flex;
-  }
-  .nav-links .dropdown-menu::before {
+/* Rimuovi dropdown e voci condizionali */
+.nav-links .dropdown,
+.nav-links .dropdown-menu,
+.desktop-only,
+.mobile-only {
     display: none !important;
+}
+
+/* Menu sempre visibile e a colonna su mobile */
+@media (max-width: 900px) {
+  .nav-links {
+    /* ...drawer styles se vuoi drawer... */
+    /* oppure semplicemente: */
+    position: fixed !important;
+    top: 0 !important;
+    left: -100vw !important;
+    width: 80vw !important;
+    max-width: 340px !important;
+    height: 100vh !important;
+    background: #101b34 !important;
+    z-index: 99999 !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    overflow-y: auto !important;
+    margin: 0 !important;
+    box-shadow: 2px 0 24px rgba(0,0,0,0.25) !important;
+    transition: left 0.3s cubic-bezier(.4,0,.2,1);
+    display: flex !important;
+  }
+  .nav-links.active {
+    left: 0 !important;
+  }
+  .nav-links li {
+    margin: 0 0 10px 0 !important;
+    width: 100%;
+  }
+  .nav-links a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1em 1.5em;
+    font-size: 1.1em;
+    border-radius: 0;
+    justify-content: flex-start;
   }
 }
 
-/* Su desktop resta absolute ma con z-index altissimo */
+/* Su desktop, menu orizzontale */
 @media (min-width: 901px) {
-  .nav-links .dropdown-menu {
-    position: absolute !important;
-    top: 100% !important;
+  .nav-links {
+    position: static !important;
     left: 0 !important;
-    right: auto !important;
-    min-width: 220px !important;
-    max-width: 95vw !important;
-    border-radius: 16px !important;
-    z-index: 99999 !important;
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    background: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    transition: none !important;
+  }
+  .nav-links li {
+    margin: 0 10px !important;
+    width: auto;
+  }
+  .nav-links a {
+    width: auto;
+    padding: 0.4em 0.7em;
+    font-size: 0.93rem;
+    border-radius: 8px;
+    justify-content: center;
   }
 }
 
@@ -2017,6 +1957,21 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
     font-weight: 700;
 }
 
+/* Spaziatura più compatta tra le categorie del dropdown menu da mobile */
+@media (max-width: 900px) {
+  .nav-links .dropdown-menu li {
+    margin: 0.05em 0 !important;
+    padding: 0 !important;
+    border-bottom: 1px solid #223;
+  }
+  .nav-links .dropdown-menu li:last-child {
+    border-bottom: none;
+  }
+  .nav-links .dropdown-menu a {
+    padding: 0.45em 1.2em !important;
+  }
+}
+
 /* --- MENU DESKTOP/MOBILE --- */
 @media (min-width: 769px) {
     .nav-links {
@@ -2052,7 +2007,7 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
         background: #101b34;
         box-shadow: 0 8px 32px rgba(0,0,0,0.25);
         z-index: 2002;
-        padding: 1.2rem 0 2rem 0;
+        padding: 0.1rem 0 2rem 0;
         height: calc(100vh - 70px);
         overflow-y: auto;
     }
@@ -2320,4 +2275,75 @@ body.no-scroll {
   .desktop-only { display: none !important; }
   /* Nascondi il dropdown su mobile */
   .nav-links .dropdown-menu { display: none !important; }
+}
+
+/* Sposta le voci extra del menu mobile più in alto */
+@media (max-width: 900px) {
+  .nav-links .mobile-extra-link {
+    margin-top: 0 !important;
+    /* Per portarle subito dopo la Home, puoi usare order se flex-direction: column */
+    order: 2;
+  }
+  .nav-links li:not(.mobile-extra-link) {
+    order: 1;
+  }
+  .nav-links .mobile-extra-link:first-child {
+    margin-top: 0.5em !important;
+  }
+}
+
+/* Dropdown visibile solo su desktop */
+@media (min-width: 901px) {
+  .nav-links .dropdown { display: list-item !important; }
+  .nav-links .dropdown-menu {
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: #1a2336;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    border-radius: 16px;
+    z-index: 99999;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.7em 0;
+  }
+  .nav-links .dropdown.open .dropdown-menu {
+    display: flex !important;
+  }
+}
+
+/* Rimuovi i punti elenco dal dropdown menu desktop */
+@media (min-width: 901px) {
+  .nav-links .dropdown-menu {
+    list-style: none !important;
+  }
+  .nav-links .dropdown-menu li {
+    list-style: none !important;
+  }
+  .nav-links .dropdown-menu li::before {
+    display: none !important;
+    content: none !important;
+  }
+}
+
+/* Footer: spaziatura minima tra colonne su mobile */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        gap: 0 !important;
+    }
+}
+
+/* Footer: spaziatura minima tra colonne e min-height su mobile */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        gap: 0 !important;
+        min-height: 0 !important;
+    }
+    .footer-col {
+        min-height: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
 }

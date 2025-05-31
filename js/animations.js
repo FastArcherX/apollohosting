@@ -2,12 +2,14 @@
 gsap.registerPlugin(ScrollTrigger);
 
 // Hero Section Animation
-gsap.from('.hero-content', {
-    duration: 1,
-    y: 100,
-    opacity: 0,
-    ease: 'power4.out'
-});
+if (document.querySelector('.hero-content')) {
+    gsap.from('.hero-content', {
+        duration: 1,
+        y: 100,
+        opacity: 0,
+        ease: 'power4.out'
+    });
+}
 
 // Feature Cards Animation
 gsap.utils.toArray('.feature-card').forEach((card, i) => {
@@ -35,4 +37,4 @@ floatingElements.forEach((element, i) => {
         ease: 'power1.inOut',
         delay: i * 0.2
     });
-}); 
+});
