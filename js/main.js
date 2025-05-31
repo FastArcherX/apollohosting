@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.remove('active');
         if (menuOverlay) menuOverlay.style.display = 'none';
         if (mobileMenuBtn) mobileMenuBtn.classList.remove('active');
+        document.body.classList.remove('no-scroll');
     }
 
     if (mobileMenuBtn) {
@@ -100,8 +101,10 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenuBtn.classList.toggle('active');
             if (navLinks.classList.contains('active')) {
                 if (menuOverlay) menuOverlay.style.display = 'block';
+                document.body.classList.add('no-scroll');
             } else {
                 if (menuOverlay) menuOverlay.style.display = 'none';
+                document.body.classList.remove('no-scroll');
             }
         });
     }
@@ -245,13 +248,10 @@ document.addEventListener('DOMContentLoaded', () => {
         dropdownToggle.addEventListener('click', function(e) {
             e.preventDefault();
             const isOpen = dropdown.classList.toggle('open');
-            if (isOpen) {
-                // Blocca lo scroll della pagina solo su mobile
-                if (window.innerWidth < 900) {
-                    document.body.style.overflow = 'hidden';
-                }
+            if (isOpen && window.innerWidth < 900) {
+                document.body.classList.add('no-scroll');
             } else {
-                document.body.style.overflow = '';
+                document.body.classList.remove('no-scroll');
             }
         });
 
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('click', function(e) {
             if (!dropdown.contains(e.target) && !e.target.classList.contains('dropdown-toggle')) {
                 dropdown.classList.remove('open');
-                document.body.style.overflow = '';
+                document.body.classList.remove('no-scroll');
             }
         });
 
@@ -267,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dropdownMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 dropdown.classList.remove('open');
-                document.body.style.overflow = '';
+                document.body.classList.remove('no-scroll');
             });
         });
     }
