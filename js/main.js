@@ -57,6 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
         retina_detect: true
     });
 
+    // Riduci la distanza di repulse su mobile
+    if (window.innerWidth <= 900) {
+        if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
+            window.pJSDom[0].pJS.interactivity.modes.repulse.distance = 60;
+        }
+    }
+
     // Animazioni allo scroll
     const observerOptions = {
         threshold: 0.1
@@ -84,11 +91,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeMenu() {
         navLinks.classList.remove('active');
         if (menuOverlay) menuOverlay.style.display = 'none';
+        if (mobileMenuBtn) mobileMenuBtn.classList.remove('active');
     }
 
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
             if (navLinks.classList.contains('active')) {
                 if (menuOverlay) menuOverlay.style.display = 'block';
             } else {

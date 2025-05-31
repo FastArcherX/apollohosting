@@ -219,7 +219,7 @@ nav {
     margin-bottom: 0;
     position: relative;
     z-index: 2;
-    background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(15, 23, 42, 0.8) 100%);
+    background: rgba(15, 23, 42, 0);
 }
 
 .cards-container {
@@ -237,7 +237,7 @@ nav {
     min-width: 320px;
     max-width: 350px;
     box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(18, 28, 51, 0.913);
     border-radius: 20px;
     padding: 2rem;
     text-align: center;
@@ -252,12 +252,12 @@ nav {
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-15px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.849);
 }
 
 .service-card.premium {
-    background: linear-gradient(145deg, rgba(37, 99, 235, 0.1), rgba(59, 130, 246, 0.1));
+    background: linear-gradient(145deg, rgba(37, 100, 235, 0.169), rgba(59, 131, 246, 0.091));
     border: 2px solid var(--primary-color);
 }
 
@@ -682,35 +682,143 @@ nav {
     }
 }
 
-/* Hero text additions */
-.hero-text {
-    max-width: 600px;
-    margin: 2rem auto;
-    text-align: left;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 15px;
+/* --- Section Grid/Card Styles for Market & Secondary Sections --- */
+.section-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: stretch;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 0;
 }
-
-.highlight-text {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: var(--accent-color);
+.section-card {
+    background: rgba(18,28,51,0.93);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    padding: 2rem 1.5rem;
+    flex: 1 1 320px;
+    min-width: 260px;
+    max-width: 420px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(255,255,255,0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
-
-.hero-benefits {
-    list-style: none;
+.section-card.section-media {
+    align-items: center;
+    justify-content: center;
+    background: rgba(18,28,51,0.75);
+    min-width: 220px;
+    max-width: 480px;
+    padding: 1.5rem 1rem;
 }
-
-.hero-benefits li {
-    margin: 0.8rem 0;
+.section-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+.section-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    font-size: 2rem;
+    color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+}
+.section-card ul {
+    margin: 1rem 0 0.5rem 1.2rem;
+    padding: 0;
+    list-style: disc;
+    color: var(--text-gray);
+}
+.section-card ul li {
+    margin-bottom: 0.4rem;
+    font-size: 1rem;
+}
+.section-card a.primary-btn {
+    margin-top: 1.5rem;
+    align-self: flex-start;
+    /* Assicura che il bottone non si sovrapponga mai al contenuto sopra */
+}
+.section-card.section-media .primary-btn {
+    margin-top: 1.25rem;
+    /* Spazio extra sopra il bottone nelle card media */
+}
+.section-card.section-media > div > p {
+    margin-bottom: 2rem;
+}
+.section-card h4, .section-card p {
+    margin-bottom: 0.7rem;
+}
+.section-card code {
+    font-size: 1.05em;
+    background: #101b34;
+    border-radius: 6px;
+    padding: 0.5em 1em;
+    color: #fff;
+    margin-bottom: 0.5em;
+    display: block;
+}
+.section-card img, .section-card table {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px #0002;
+    margin: 0 auto;
+    display: block;
+}
+.section-card table {
+    background: #101b34;
+    color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+}
+.section-card table th, .section-card table td {
+    padding: 0.7em 1em;
+    border-bottom: 1px solid #223;
+    text-align: left;
+}
+.section-card table th {
+    color: var(--accent-color);
+    background: #18243a;
+}
+.section-card table tr:last-child td {
+    border-bottom: none;
 }
 
-.hero-benefits i {
-    color: var(--accent-color);
+/* Responsive for section-grid/cards */
+@media (max-width: 900px) {
+    .section-grid {
+        flex-direction: column;
+        gap: 1.2rem;
+        margin-top: 1.2rem;
+    }
+    .section-card, .section-card.section-media {
+        max-width: 100%;
+        min-width: 0;
+        padding: 1.2rem 0.8rem;
+    }
+}
+@media (max-width: 600px) {
+    .section-card, .section-card.section-media {
+        padding: 1rem 0.5rem;
+    }
+    .section-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 1.4rem;
+        margin-bottom: 0.7rem;
+    }
 }
 
 /* Features Section */
@@ -1042,7 +1150,14 @@ nav {
     pointer-events: auto !important; /* Forza l'interattività anche se altri layer la bloccano */
 }
 
-/* Per evitare che i contenuti sopra blocchino l'interazione con lo sfondo: */
+/* Rendi lo sfondo SEMPRE interattivo, anche sotto tutti gli elementi */
+#particles-js,
+#particles-js canvas {
+    pointer-events: auto !important;
+    z-index: 0 !important;
+}
+
+/* Assicurati che NESSUN elemento sopra blocchi il mouse sullo sfondo */
 header,
 .page-title,
 .service-cards,
@@ -1052,10 +1167,10 @@ header,
 .footer {
     position: relative;
     z-index: 2;
-    pointer-events: none; /* I contenuti NON bloccano il mouse sullo sfondo */
+    pointer-events: none !important; /* Tutto il blocco sopra NON blocca il mouse */
 }
-header *,.page-title *, .service-cards *, .features *, .about-section *, .page-section *, .footer * {
-    pointer-events: auto; /* Ma i figli (bottoni, link, ecc) restano cliccabili */
+header *, .page-title *, .service-cards *, .features *, .about-section *, .page-section *, .footer * {
+    pointer-events: auto !important; /* Ma i figli (bottoni, link, ecc) restano cliccabili */
 }
 
 /* Terms of Service Styles */
@@ -1765,7 +1880,7 @@ header *,.page-title *, .service-cards *, .features *, .about-section *, .page-s
     }
 }
 
-/* Assicurati che il menu mobile appaia solo quando necessario */
+/* Assicura che il menu mobile appaia solo quando necessario */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -1899,4 +2014,238 @@ header *,.page-title *, .service-cards *, .features *, .about-section *, .page-s
     color: #fff;
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     font-weight: 700;
+}
+
+/* --- MENU DESKTOP/MOBILE --- */
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex !important;
+        flex-direction: row;
+        position: static !important;
+        background: none !important;
+        box-shadow: none !important;
+        width: auto !important;
+        height: auto !important;
+        z-index: 1001;
+    }
+    .mobile-menu-btn {
+        display: none !important;
+    }
+    .menu-overlay {
+        display: none !important;
+    }
+}
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        align-items: center;
+        padding: 0.5rem 0.5rem;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100vw;
+        background: #101b34;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+        z-index: 2002;
+        padding: 1.2rem 0 2rem 0;
+        height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+    .nav-links.active {
+        display: flex !important;
+    }
+    .mobile-menu-btn {
+        display: block !important;
+        background: none;
+        border: none;
+        color: var(--text-light);
+        font-size: 2rem;
+        margin-left: 1rem;
+        cursor: pointer;
+    }
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(15,23,42,0.7);
+        z-index: 2001;
+    }
+    .nav-links.active ~ .menu-overlay {
+        display: block;
+    }
+}
+
+/* --- CONTENUTI PIÙ COMPATTI E CENTRATI SU MOBILE --- */
+@media (max-width: 768px) {
+    .page-title {
+        padding: 3rem 0.5rem 1rem 0.5rem;
+    }
+    .main-title {
+        font-size: 1.7rem;
+        margin-bottom: 0.7rem;
+    }
+    .title-container {
+        max-width: 98vw;
+        padding: 0;
+    }
+    .title-description {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    .features {
+        padding: 1.5rem 0.5rem;
+    }
+    .features-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+    .feature-card {
+        padding: 1.2rem 0.7rem;
+        font-size: 0.98rem;
+    }
+    .about-section {
+        padding: 1.5rem 0.5rem;
+    }
+    .team-grid {
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    .team-card {
+        padding: 1.2rem 0.7rem;
+        font-size: 0.98rem;
+    }
+    .service-cards {
+        padding: 1.2rem 0.5rem;
+    }
+    .cards-container {
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+    .service-card {
+        min-width: 90vw;
+        max-width: 98vw;
+        padding: 1.2rem 0.7rem;
+        font-size: 0.98rem;
+    }
+    .service-card h3 {
+        font-size: 1.1rem;
+    }
+    .features-list li {
+        font-size: 0.98rem;
+    }
+    .section-grid {
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    .section-card, .section-card.section-media {
+        min-width: 0;
+        max-width: 100vw;
+        padding: 1rem 0.5rem;
+        align-items: center;
+        text-align: center;
+    }
+    .section-card ul {
+        margin-left: 0.5rem;
+        text-align: left;
+    }
+    .section-card img, .section-card table {
+        max-width: 95vw;
+    }
+    .section-icon {
+        margin-bottom: 0.7rem;
+    }
+}
+
+/* --- MIGLIORA IMMAGINI E TABELLE SU MOBILE --- */
+@media (max-width: 480px) {
+    .section-card img, .section-card table {
+        max-width: 98vw;
+    }
+    .section-card {
+        font-size: 0.95rem;
+    }
+    .feature-card, .team-card {
+        font-size: 0.95rem;
+    }
+    .main-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- CORREZIONE CENTRATURA BOTTONI E CONTENUTI --- */
+.section-card a.primary-btn,
+.section-card .primary-btn {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    min-width: 120px;
+    max-width: 90vw;
+    text-align: center;
+}
+
+/* 1. Nascondi il tasto "More" solo su mobile */
+@media (max-width: 900px) {
+    .nav-links .dropdown {
+        display: none !important;
+    }
+}
+
+/* 2. Mostra le voci della dropdown come normali voci di menu su mobile */
+@media (max-width: 900px) {
+    .nav-links .mobile-extra-links {
+        display: block !important;
+    }
+}
+@media (min-width: 901px) {
+    .nav-links .mobile-extra-links {
+        display: none !important;
+    }
+}
+
+/* 3. Anima il tasto menu mobile (hamburger → X) */
+.mobile-menu-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 1002;
+    display: none;
+}
+.mobile-menu-btn .bar {
+    display: block;
+    width: 26px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--text-light);
+    border-radius: 2px;
+    transition: 0.3s;
+}
+.mobile-menu-btn.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.mobile-menu-btn.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.mobile-menu-btn.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+@media (max-width: 900px) {
+    .mobile-menu-btn {
+        display: block !important;
+    }
+}
+
+/* 4. Riduci il raggio di interazione delle particelle su mobile */
+@media (max-width: 900px) {
+    #particles-js canvas {
+        pointer-events: auto !important;
+        /* Il JS imposterà il valore di repulse distance più basso */
+    }
 }

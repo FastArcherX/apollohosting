@@ -28,6 +28,14 @@
                 <li><a href="#services"><i class="fa-solid fa-cogs"></i> Services</a></li>
                 <li><a href="#plans"><i class="fa-solid fa-layer-group"></i> VPS</a></li>
                 <li><a href="#gamehosting"><i class="fa-solid fa-gamepad"></i> Game Hosting</a></li>
+                <!-- Extra links for mobile, hidden on desktop -->
+                <li class="mobile-extra-links"><a href="#market"><i class="fa-solid fa-chart-line"></i> Market</a></li>
+                <li class="mobile-extra-links"><a href="#competition"><i class="fa-solid fa-trophy"></i> Competition</a></li>
+                <li class="mobile-extra-links"><a href="#development"><i class="fa-solid fa-chart-bar"></i> Development</a></li>
+                <li class="mobile-extra-links"><a href="#pricing"><i class="fa-solid fa-euro-sign"></i> Pricing</a></li>
+                <li class="mobile-extra-links"><a href="#future"><i class="fa-solid fa-forward"></i> Future</a></li>
+                <li class="mobile-extra-links"><a href="#investment"><i class="fa-solid fa-coins"></i> Investments</a></li>
+                <!-- Desktop dropdown -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" tabindex="0"><i class="fa-solid fa-ellipsis-h"></i> More <i class="fa-solid fa-caret-down"></i></a>
                     <ul class="dropdown-menu">
@@ -41,7 +49,12 @@
                 </li>
             </ul>
             <button class="client-area"><i class="fa-solid fa-user"></i> Client Area</button>
-            <button class="mobile-menu-btn" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+            <!-- Animated hamburger menu -->
+            <button class="mobile-menu-btn" aria-label="Open menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             <div class="menu-overlay"></div>
         </nav>
     </header>
@@ -52,9 +65,9 @@
             <div class="logo" style="margin:0 auto 20px auto;">
                 <img src="img/logo.png" alt="Apollo Hosting Logo" style="width: 300px; height: 300px;">
             </div>
-            <h1 class="main-title"></i> Empowering Your Cloud Journey</h1>
+            <h1 class="main-title"></i> Apollo Hosting</h1>
             <div class="title-accent"></div>
-            <p class="title-description">Scalable, secure and high-performance VPS solutions. Game hosting, 24/7 support, green data centers.</p>
+            <h2 class="title-description">Scalable, secure and high-performance VPS solutions. Game hosting, 24/7 support, green data centers.</h2>
         </div>
     </section>
 
@@ -62,45 +75,48 @@
     <section class="service-cards" id="plans">
         <div class="cards-container" style="justify-content: center;">
             <div class="service-card fade-up">
-                <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
+                <div class="card-icon"><i class="fa-solid fa-seedling" style="font-size: 40px; margin-bottom: 0.5rem;"></i></div>
                 <h3><i class="fa-solid fa-cube"></i> Starter</h3>
-                <p class="price">€5/month</p>
+                <p class="price">€2.50/month</p>
                 <ul class="features-list">
-                    <li><i class="fa-solid fa-microchip"></i> 1 vCPU</li>
-                    <li><i class="fa-solid fa-memory"></i> 1GB DDR4 ECC RAM</li>
-                    <li><i class="fa-solid fa-hdd"></i> 25GB NVMe SSD</li>
-                    <li><i class="fa-solid fa-exchange-alt"></i> 1TB Traffic</li>
+                    <li><i class="fa-solid fa-microchip"></i> 2 vCPU</li>
+                    <li><i class="fa-solid fa-bolt"></i> 3.6GHz Frequency</li>
+                    <li><i class="fa-solid fa-memory"></i> 4GB DDR4 RAM</li>
+                    <li><i class="fa-solid fa-hdd"></i> 40GB NVMe SSD</li>
+                    <li><i class="fa-solid fa-wifi"></i> 0.5Gbit/s Bandwidth</li>
                     <li><i class="fa-solid fa-headset"></i> 24/7 Support</li>
-                    <li><i class="fa-solid fa-database"></i> Weekly backup</li>
+                    <li><i class="fa-solid fa-database"></i> 1 Backup</li>
                 </ul>
                 <button class="card-btn"><i class="fa-solid fa-arrow-right"></i> Choose</button>
             </div>
             <div class="service-card premium fade-up">
                 <div class="popular-badge">Most Popular</div>
-                <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div class="card-icon"><i class="fa-solid fa-bolt" style="font-size: 40px; margin-bottom: 0.5rem;"></i></div>
                 <h3><i class="fa-solid fa-rocket"></i> Pro</h3>
-                <p class="price">€12/month</p>
+                <p class="price">€6/month</p>
                 <ul class="features-list">
-                    <li><i class="fa-solid fa-microchip"></i> 2 vCPU</li>
-                    <li><i class="fa-solid fa-memory"></i> 4GB DDR4 ECC RAM</li>
+                    <li><i class="fa-solid fa-microchip"></i> 4 vCPU</li>
+                    <li><i class="fa-solid fa-bolt"></i> 3.6GHz Frequency</li>
+                    <li><i class="fa-solid fa-memory"></i> 8GB DDR4 ECC RAM</li>
                     <li><i class="fa-solid fa-hdd"></i> 80GB NVMe SSD</li>
-                    <li><i class="fa-solid fa-exchange-alt"></i> 4TB Traffic</li>
-                    <li><i class="fa-solid fa-headset"></i> Priority Support</li>
-                    <li><i class="fa-solid fa-clone"></i> Unlimited snapshots</li>
+                    <li><i class="fa-solid fa-wifi"></i> 1Gbit/s Bandwidth</li>
+                    <li><i class="fa-solid fa-headset"></i> 24/7 Support</li>
+                    <li><i class="fa-solid fa-database"></i> 1 Backup</li>
                 </ul>
                 <button class="card-btn"><i class="fa-solid fa-arrow-right"></i> Choose</button>
             </div>
             <div class="service-card fade-up">
-                <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
-                <h3><i class="fa-solid fa-briefcase"></i> Business</h3>
-                <p class="price">€25/month</p>
+                <div class="card-icon"><i class="fa-solid fa-gem" style="font-size: 40px; margin-bottom: 0.5rem;"></i></div>
+                <h3><i class="fa-solid fa-briefcase"></i> Elite</h3>
+                <p class="price">€10/month</p>
                 <ul class="features-list">
-                    <li><i class="fa-solid fa-microchip"></i> 4 vCPU</li>
-                    <li><i class="fa-solid fa-memory"></i> 8GB DDR4 ECC RAM</li>
-                    <li><i class="fa-solid fa-hdd"></i> 160GB NVMe SSD</li>
-                    <li><i class="fa-solid fa-exchange-alt"></i> 8TB Traffic</li>
-                    <li><i class="fa-solid fa-headset"></i> Premium Support</li>
-                    <li><i class="fa-solid fa-network-wired"></i> Dedicated IP included</li>
+                    <li><i class="fa-solid fa-microchip"></i> 8 vCPU</li>
+                    <li><i class="fa-solid fa-bolt"></i> 3.6GHz Frequency</li>
+                    <li><i class="fa-solid fa-memory"></i> 12GB DDR4 ECC RAM</li>
+                    <li><i class="fa-solid fa-hdd"></i> 120GB NVMe SSD</li>
+                    <li><i class="fa-solid fa-wifi"></i> 3Gbit/s Bandwidth</li>
+                    <li><i class="fa-solid fa-headset"></i> 24/7 Support</li>
+                    <li><i class="fa-solid fa-database"></i> 1 Backup</li>
                 </ul>
                 <button class="card-btn"><i class="fa-solid fa-arrow-right"></i> Choose</button>
             </div>
@@ -112,22 +128,22 @@
         <div class="features-grid">
             <div class="feature-card">
                 <i class="fas fa-network-wired feature-icon"></i>
-                <h3 class="feature-title"><i class="fa-solid fa-network-wired"></i> 10Gbit/s Network</h3>
+                <h3 class="feature-title">+ 10Gbit/s Network</h3>
                 <p class="feature-description">Ultra-fast connection and instant data transfers.</p>
             </div>
             <div class="feature-card">
                 <i class="fas fa-shield-alt feature-icon"></i>
-                <h3 class="feature-title"><i class="fa-solid fa-shield-halved"></i> DDoS Protection</h3>
+                <h3 class="feature-title">DDoS Protection</h3>
                 <p class="feature-description">Advanced firewall and DDoS protection on every server.</p>
             </div>
             <div class="feature-card">
                 <i class="fas fa-headset feature-icon"></i>
-                <h3 class="feature-title"><i class="fa-solid fa-headset"></i> 24/7 Support</h3>
+                <h3 class="feature-title">24/7 Support</h3>
                 <p class="feature-description">Italian and European technical support always available.</p>
             </div>
             <div class="feature-card">
                 <i class="fas fa-tachometer-alt feature-icon"></i>
-                <h3 class="feature-title"><i class="fa-solid fa-gauge-high"></i> Excellent Performance</h3>
+                <h3 class="feature-title">Excellent Performance</h3>
                 <p class="feature-description">Latest generation hardware and smart automation.</p>
             </div>
         </div>
@@ -175,9 +191,9 @@
                 <img class="game-img" src="img/mc.png" alt="Minecraft" style="width:60px;height:60px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;">
                 <h3><i class="fa-solid fa-cube"></i> Minecraft</h3>
                 <ul class="features-list">
-                    <li><i class="fa-solid fa-plug"></i> 1-click modpack install</li>
-                    <li><i class="fa-solid fa-terminal"></i> Web console & FTP</li>
-                    <li><i class="fa-solid fa-database"></i> Automatic backups</li>
+                    <li><i class="fa-solid fa-plug"></i> Modpack Installer</li>
+                    <li><i class="fa-solid fa-terminal"></i> Live Console</li>
+                    <li><i class="fa-solid fa-database"></i> Automatic Saveslots</li>
                     <li><i class="fa-solid fa-users"></i> Unlimited slots</li>
                 </ul>
                 <button class="card-btn"><i class="fa-solid fa-cart-shopping"></i> Buy</button>
@@ -186,10 +202,10 @@
                 <img class="game-img" src="img/rust.png" alt="Rust" style="width:60px;height:60px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;">
                 <h3><i class="fa-solid fa-fire"></i> Rust</h3>
                 <ul class="features-list">
-                    <li><i class="fa-solid fa-plug"></i> Oxide/UMod support</li>
-                    <li><i class="fa-solid fa-rotate"></i> Auto-restart & update</li>
-                    <li><i class="fa-solid fa-shield-halved"></i> DDoS Protection</li>
-                    <li><i class="fa-solid fa-puzzle-piece"></i> Plugin management</li>
+                    <li><i class="fa-solid fa-plug"></i> Mod Setup</li>
+                    <li><i class="fa-solid fa-terminal"></i> Live Console</li>
+                    <li><i class="fa-solid fa-shield-halved"></i> Cheat Protection</li>
+                    <li><i class="fa-solid fa-puzzle-piece"></i> Plugin Management</li>
                 </ul>
                 <button class="card-btn"><i class="fa-solid fa-cart-shopping"></i> Buy</button>
             </div>
@@ -197,10 +213,10 @@
                 <img class="game-img" src="img/scpsl.png" alt="SCP:SL" style="width:60px;height:60px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;">
                 <h3><i class="fa-solid fa-flask"></i> SCP:SL</h3>
                 <ul class="features-list">
-                    <li><i class="fa-solid fa-plug"></i> Fast plugin install</li>
-                    <li><i class="fa-solid fa-terminal"></i> Live console</li>
-                    <li><i class="fa-solid fa-database"></i> Automatic backups</li>
-                    <li><i class="fa-solid fa-users"></i> Customizable slots</li>
+                    <li><i class="fa-solid fa-plug"></i> Fast Setup</li>
+                    <li><i class="fa-solid fa-terminal"></i> Live Console</li>
+                    <li><i class="fa-solid fa-download"></i> Exiled setup</li>
+                    <li><i class="fa-solid fa-puzzle-piece"></i> Plugin Management</li>
                 </ul>
                 <button class="card-btn"><i class="fa-solid fa-cart-shopping"></i> Buy</button>
             </div>
@@ -209,9 +225,9 @@
                 <h3><i class="fa-solid fa-volcano"></i> ARK: Survival Evolved</h3>
                 <ul class="features-list">
                     <li><i class="fa-solid fa-layer-group"></i> Multi-map cluster</li>
-                    <li><i class="fa-solid fa-puzzle-piece"></i> Steam Workshop mods</li>
-                    <li><i class="fa-solid fa-database"></i> Automatic backups</li>
-                    <li><i class="fa-solid fa-gauge-high"></i> High performance</li>
+                    <li><i class="fa-solid fa-terminal"></i> Live Console</li>
+                    <li><i class="fa-solid fa-puzzle-piece"></i> Steam Workshop Mods Istaller</li>
+                    <li><i class="fa-solid fa-gauge-high"></i> Seed Loader</li>
                 </ul>
                 <button class="card-btn"><i class="fa-solid fa-cart-shopping"></i> Buy</button>
             </div>
@@ -219,8 +235,8 @@
                 <img class="game-img" src="img/cs2.png" alt="CS2" style="width:60px;height:60px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;">
                 <h3><i class="fa-solid fa-gun"></i> Counter-Strike 2</h3>
                 <ul class="features-list">
-                    <li><i class="fa-solid fa-gauge-high"></i> 128+ Tickrate</li>
                     <li><i class="fa-solid fa-map"></i> Map and plugin management</li>
+                    <li><i class="fa-solid fa-terminal"></i> Live console</li>
                     <li><i class="fa-solid fa-shield-halved"></i> Advanced anti-cheat</li>
                     <li><i class="fa-solid fa-trophy"></i> Tournament support</li>
                 </ul>
@@ -234,8 +250,9 @@
         <div class="container fade-up">
             <h2><i class="fa-solid fa-chart-line"></i> Market</h2>
             <div class="title-accent"></div>
-            <div class="market-content">
-                <div>
+            <div class="section-grid">
+                <div class="section-card">
+                    <div class="section-icon" style="background:#2563eb1a;"><i class="fa-solid fa-chart-bar"></i></div>
                     <p>
                         Hosting market analysis, growth trends, competitor comparison and opportunities for Apollo Hosting customers.<br>
                         <strong>Highlights:</strong>
@@ -247,8 +264,8 @@
                     </ul>
                     <a href="#pricing" class="primary-btn" style="margin-top:1rem;">See our offers</a>
                 </div>
-                <div>
-                    <img src="img/market-graph.png" alt="Hosting market graph">
+                <div class="section-card section-media">
+                    <img src="img/market-graph.png" alt="Hosting market graph" style="max-width:100%;border-radius:12px;box-shadow:0 2px 12px #0002;">
                 </div>
             </div>
         </div>
@@ -257,8 +274,9 @@
         <div class="container fade-up">
             <h2><i class="fa-solid fa-trophy"></i> Competition</h2>
             <div class="title-accent"></div>
-            <div>
-                <div>
+            <div class="section-grid">
+                <div class="section-card">
+                    <div class="section-icon" style="background:#f59e421a;"><i class="fa-solid fa-medal"></i></div>
                     <p>
                         Discover how Apollo Hosting stands out from the main hosting and VPS providers in Italy and Europe.
                     </p>
@@ -268,7 +286,7 @@
                         <li>Innovation and exclusive services</li>
                     </ul>
                 </div>
-                <div>
+                <div class="section-card section-media">
                     <table>
                         <thead>
                             <tr>
@@ -291,8 +309,9 @@
         <div class="container fade-up">
             <h2><i class="fa-solid fa-chart-bar"></i> Development</h2>
             <div class="title-accent"></div>
-            <div style="display:flex;flex-wrap:wrap;gap:2rem;">
-                <div style="flex:1;min-width:250px;">
+            <div class="section-grid">
+                <div class="section-card">
+                    <div class="section-icon" style="background:#22d3ee1a;"><i class="fa-solid fa-code"></i></div>
                     <p>
                         Our development solutions: automation, APIs, DevOps tools and support for custom projects.
                     </p>
@@ -302,7 +321,7 @@
                         <li>Technical consulting for startups</li>
                     </ul>
                 </div>
-                <div style="flex:1;min-width:250px;">
+                <div class="section-card section-media">
                     <div style="background:#18243a;padding:1.2rem;border-radius:10px;">
                         <h4 style="color:#60a5fa;">API Example</h4>
                         <code style="display:block;background:#101b34;padding:0.7em 1em;border-radius:6px;color:#fff;">POST /api/v1/vps/restart</code>
@@ -316,8 +335,9 @@
         <div class="container fade-up">
             <h2><i class="fa-solid fa-euro-sign"></i> Pricing</h2>
             <div class="title-accent"></div>
-            <div style="display:flex;flex-wrap:wrap;gap:2rem;">
-                <div style="flex:1;min-width:250px;">
+            <div class="section-grid">
+                <div class="section-card">
+                    <div class="section-icon" style="background:#a3e6351a;"><i class="fa-solid fa-tags"></i></div>
                     <p>
                         Transparency and convenience: check out the complete price list for all Apollo Hosting services.
                     </p>
@@ -327,7 +347,7 @@
                         <li>Discounts for students and companies</li>
                     </ul>
                 </div>
-                <div style="flex:1;min-width:250px;">
+                <div class="section-card section-media">
                     <div style="background:#18243a;padding:1.2rem;border-radius:10px;">
                         <h4 style="color:#60a5fa;">Promo of the month</h4>
                         <p style="color:#fff;">-20% on all annual plans!</p>
@@ -341,8 +361,9 @@
         <div class="container fade-up">
             <h2><i class="fa-solid fa-forward"></i> Future</h2>
             <div class="title-accent"></div>
-            <div style="display:flex;flex-wrap:wrap;gap:2rem;">
-                <div style="flex:1;min-width:250px;">
+            <div class="section-grid">
+                <div class="section-card">
+                    <div class="section-icon" style="background:#818cf81a;"><i class="fa-solid fa-seedling"></i></div>
                     <p>
                         Our roadmap: new features, international expansion, sustainability and technological innovation.
                     </p>
@@ -352,7 +373,7 @@
                         <li>Research and development projects</li>
                     </ul>
                 </div>
-                <div style="flex:1;min-width:250px;">
+                <div class="section-card section-media">
                     <img src="img/datacenter-futuro.jpg" alt="Future Datacenter" style="width:100%;max-width:320px;border-radius:12px;box-shadow:0 2px 12px #0002;">
                 </div>
             </div>
@@ -362,8 +383,9 @@
         <div class="container fade-up">
             <h2><i class="fa-solid fa-coins"></i> Investments</h2>
             <div class="title-accent"></div>
-            <div style="display:flex;flex-wrap:wrap;gap:2rem;">
-                <div style="flex:1;min-width:250px;">
+            <div class="section-grid">
+                <div class="section-card">
+                    <div class="section-icon" style="background:#fde0471a;"><i class="fa-solid fa-piggy-bank"></i></div>
                     <p>
                         Investment opportunities in Apollo Hosting: growth, transparency and returns for our partners.
                     </p>
@@ -374,7 +396,7 @@
                     </ul>
                     <a href="mailto:info@apollo-hosting.com" class="primary-btn" style="margin-top:1rem;">Contact us to invest</a>
                 </div>
-                <div style="flex:1;min-width:250px;">
+                <div class="section-card section-media">
                     <img src="img/investment.jpg" alt="Investments" style="width:100%;max-width:320px;border-radius:12px;box-shadow:0 2px 12px #0002;">
                 </div>
             </div>
@@ -426,6 +448,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
-    <script src="js/chat.js"></script>
 </body>
 </html>
