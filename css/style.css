@@ -319,8 +319,9 @@ nav {
 
 /* Riduci min-height delle sezioni generiche */
 .page-section {
-    min-height: 40vh;
-    padding-top: 90px; /* Spazio per il header */
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    background: none;
 }
 
 /* Scroll-margin per tutte le sezioni ancorate */
@@ -611,8 +612,8 @@ nav {
 /* Migliora compattezza e layout delle sezioni secondarie */
 .page-section {
     min-height: unset;
-    padding-top: 2.2rem;
-    padding-bottom: 2.2rem;
+    padding-top: 1.2rem;   /* ridotto */
+    padding-bottom: 1.2rem; /* ridotto */
     background: none;
 }
 
@@ -622,32 +623,15 @@ nav {
     padding: 0 10px;
 }
 
-.page-section h2 {
-    text-align: left;
-    margin-bottom: 0.5rem;
-}
-
-.page-section .title-accent {
-    margin: 0.2rem 0 0.7rem 0;
-}
-
-.page-section ul {
-    margin: 0.3rem 0 0.3rem 1.2rem;
-    padding-left: 1.2rem;
-}
-
-.page-section ul li {
-    margin-bottom: 0.2rem;
-}
-
 .market-content,
 .page-section > .container > div,
 .page-section > .container > .market-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.7rem;
+    gap: 1rem; /* ridotto da 2rem/0.7rem a 1rem */
     align-items: flex-start;
     justify-content: space-between;
+    margin-bottom: 0; /* elimina spazio extra */
 }
 
 .market-content > div,
@@ -655,37 +639,47 @@ nav {
     flex: 1 1 320px;
     min-width: 240px;
     max-width: 480px;
-    margin: 0;
+    margin: 0 0 0.5rem 0; /* ridotto il margin-bottom */
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+/* Riduci spazio tra immagini/tabelle e il resto */
 .page-section img,
 .page-section table {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 2px 12px #0002;
-    margin: 0 auto;
+    margin: 0 auto 0.5rem auto; /* ridotto il margin-bottom */
     display: block;
 }
 
-.page-section table {
-    background: #101b34;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 0.2rem;
-}
-
-.page-section table th,
-.page-section table td {
-    padding: 6px;
-    text-align: left;
-}
-
-.page-section code {
-    word-break: break-all;
+/* Riduci ancora di più su mobile */
+@media (max-width: 900px) {
+    .market-content,
+    .page-section > .container > div,
+    .page-section > .container > .market-content {
+        flex-direction: column;
+        gap: 0.5rem; /* ancora più compatto */
+        align-items: stretch;
+    }
+    .market-content > div,
+    .page-section > .container > div > div {
+        max-width: 100%;
+        min-width: 0;
+        margin-bottom: 0.3rem; /* ancora meno spazio */
+    }
+    .page-section img,
+    .page-section table {
+        max-width: 100%;
+        margin-bottom: 0.3rem;
+    }
+    .page-section {
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+    }
 }
 
 /* Hero text additions */
@@ -1634,8 +1628,9 @@ header *,.page-title *, .service-cards *, .features *, .about-section *, .page-s
 
 /* Stili per le sezioni di pagina */
 .page-section {
-    min-height: 100vh;
-    padding-top: 80px; /* Spazio per il header */
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    background: none;
 }
 
 /* Stile per il link attivo nel menu */
@@ -1846,265 +1841,62 @@ header *,.page-title *, .service-cards *, .features *, .about-section *, .page-s
 }
 
 /* --- INIZIO: RIMOZIONE E UNIFICAZIONE CODICE DUPLICATO --- */
-/* Rimuovi le duplicazioni di .service-cards, .cards-container, .service-card, .price, ecc. */
-/* Mantieni solo una definizione per ciascuna classe, con media query coerenti. */
-
-/* Service Cards */
-.service-cards {
-    padding: 2rem 2rem;
-    margin-bottom: 0;
-    position: relative;
-    z-index: 2;
-    background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(15, 23, 42, 0.8) 100%);
-}
-
-.cards-container {
-    max-width: 1200px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 1rem;
-}
-
-.service-card {
-    flex: 1 1 320px;
-    min-width: 320px;
-    max-width: 350px;
-    box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 20px;
-    padding: 2rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.service-card.premium {
-    background: linear-gradient(145deg, rgba(37, 99, 235, 0.1), rgba(59, 130, 246, 0.1));
-    border: 2px solid var(--primary-color);
-}
-
-.price {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.3rem;
-    margin: 1rem 0;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--accent-color);
-    margin-bottom: 1.5rem;
-}
+/* Tutte le definizioni duplicate sono state rimosse. */
 /* --- FINE: RIMOZIONE E UNIFICAZIONE CODICE DUPLICATO --- */
 
 /* --- INIZIO: COMPATTAZIONE E MIGLIORAMENTO SPAZIATURA SEZIONI SECONDARIE --- */
-.page-section {
-    min-height: unset;
-    padding-top: 1.1rem;
-    padding-bottom: 1.1rem;
-    background: none;
-    margin-bottom: 0.5rem;
-}
-
-.page-section .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 10px;
-}
-
-.page-section h2 {
-    text-align: left;
-    margin-bottom: 0.5rem;
-}
-
-.page-section .title-accent {
-    margin: 0.2rem 0 0.7rem 0;
-}
-
-.page-section ul {
-    margin: 0.3rem 0 0.3rem 1.2rem;
-    padding-left: 1.2rem;
-}
-
-.page-section ul li {
-    margin-bottom: 0.2rem;
-}
-
-.market-content,
-.page-section > .container > div,
-.page-section > .container > .market-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.7rem;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.market-content > div,
-.page-section > .container > div > div {
-    flex: 1 1 320px;
-    min-width: 240px;
-    max-width: 480px;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.page-section img,
-.page-section table {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 12px #0002;
-    margin: 0 auto;
-    display: block;
-}
-
-.page-section table {
-    background: #101b34;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 0.2rem;
-}
-
-.page-section table th,
-.page-section table td {
-    padding: 6px;
-    text-align: left;
-}
-
-.page-section code {
-    word-break: break-all;
-}
+/* RIMOSSO: Tutte le definizioni duplicate di .page-section, .market-content, .page-section .container, ecc. */
+/* Mantieni solo la prima versione coerente e le media query principali. */
 /* --- FINE: COMPATTAZIONE E MIGLIORAMENTO SPAZIATURA SEZIONI SECONDARIE --- */
 
 /* --- INIZIO: MEDIA QUERY OTTIMIZZATE --- */
-@media (max-width: 900px) {
-    .market-content,
-    .page-section > .container > div,
-    .page-section > .container > .market-content {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: stretch;
-    }
-    .market-content > div,
-    .page-section > .container > div > div {
-        max-width: 100%;
-        min-width: 0;
-    }
-    .page-section img,
-    .page-section table {
-        max-width: 100%;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 600px) {
-    .page-section {
-        padding-top: 0.7rem;
-        padding-bottom: 0.7rem;
-    }
-    .page-section h2 {
-        font-size: 1.1rem;
-    }
-    .page-section .title-accent {
-        margin: 0.1rem 0 0.4rem 0;
-    }
-    .market-content,
-    .page-section > .container > div,
-    .page-section > .container > .market-content {
-        gap: 0.3rem;
-    }
-    .page-section img,
-    .page-section table {
-        max-width: 98vw;
-    }
-}
+/* RIMOSSO: Tutte le media query duplicate per .market-content, .page-section, ecc. */
+/* Mantieni solo la prima versione coerente. */
 /* --- FINE: MEDIA QUERY OTTIMIZZATE --- */
 
-/* Assicura che il contenitore del dropdown sia relativo */
+/* Assicura che il dropdown sia sempre posizionato subito sotto il tasto "Altro" */
 .nav-links .dropdown {
     position: relative;
 }
 
-/* Dropdown menu: sempre sotto il tasto "Altro" e largo quanto il tasto */
 .nav-links .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 100%;
-    max-width: none;
-    background: #1a2336;
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-    padding: 0.7em 0;
-    z-index: 2001;
-    flex-direction: column;
-    align-items: stretch;
-    animation: fadeInMenu 0.2s;
-    margin: 0;
-    box-sizing: border-box;
+    left: 0 !important;
+    right: auto !important;
+    min-width: 100% !important;
+    max-width: none !important;
+    top: 100% !important;
+    transform: none !important;
+    /* Rimuovi eventuali margin/fix che lo spostano */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
-/* Mostra il menu quando la classe open è presente */
-.nav-links .dropdown.open .dropdown-menu {
-    display: flex;
-}
-
-/* Freccia decorativa centrata rispetto al tasto "Altro" */
-.nav-links .dropdown-menu::before {
-    content: "";
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 0 10px 12px 10px;
-    border-style: solid;
-    border-color: transparent transparent #1a2336 transparent;
-    filter: blur(1px);
-}
-
-/* Mobile: menu sempre sotto il tasto "Altro" e largo quanto il tasto */
+/* Su mobile, stessa regola */
 @media (max-width: 900px) {
-    .nav-links .dropdown-menu {
-        position: absolute !important;
-        top: 100% !important;
+    .nav-links .dropdown-menu { 
         left: 0 !important;
+        right: auto !important;
         min-width: 100% !important;
         max-width: none !important;
-        border-radius: 16px !important;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.25) !important;
-        background: #1a2336 !important;
-        z-index: 2001 !important;
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0.7em 0 !important;
-        margin: 0 !important;
-        box-sizing: border-box !important;
+        top: 100% !important;
+        transform: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
-    .nav-links .dropdown.open .dropdown-menu {
-        display: flex;
-    }
-    .nav-links .dropdown-menu::before {
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-    }
+}
+
+/* Colore attivo per il tasto "Altro" solo quando il dropdown è aperto */
+.nav-links .dropdown > .dropdown-toggle {
+    /* Rimuovi colore bianco di default */
+    color: var(--text-light);
+    background: none;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+
+/* Applica colore attivo SOLO quando il dropdown è aperto */
+.nav-links .dropdown.open > .dropdown-toggle {
+    color: #fff;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    font-weight: 700;
 }
