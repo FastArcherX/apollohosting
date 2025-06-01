@@ -259,6 +259,23 @@ nav {
 .service-card.premium {
     background: linear-gradient(145deg, rgba(37, 100, 235, 0.169), rgba(59, 131, 246, 0.091));
     border: 2px solid var(--primary-color);
+    position: relative;
+    /* assicurati che la card sia position: relative */
+}
+.popular-badge {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2563eb;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 3;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    /* fix: nessun margin, nessun width, solo centratura assoluta */
 }
 
 .price {
@@ -423,14 +440,6 @@ nav {
 @media screen and (max-width: 968px) {
     .cards-container {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    nav {
-        padding: 1rem;
-    }
-    
-    .nav-links {
-        gap: 1.5rem;
     }
 }
 
@@ -999,7 +1008,6 @@ nav {
     .footer-container {
         flex-direction: column !important;
         align-items: center !important;
-        gap: 1.5rem !important;
         text-align: center !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
@@ -1450,14 +1458,11 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
 /* Menu sempre visibile e a colonna su mobile */
 @media (max-width: 900px) {
   .nav-links {
-    /* ...drawer styles se vuoi drawer... */
-    /* oppure semplicemente: */
     position: fixed !important;
     top: 0 !important;
     left: -100vw !important;
-    width: 80vw !important;
+    width: 75vw !important;
     max-width: 340px !important;
-    height: 100vh !important;
     background: #101b34 !important;
     z-index: 99999 !important;
     flex-direction: column !important;
@@ -1627,7 +1632,6 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
         background: #101b34;
         box-shadow: 0 8px 32px rgba(0,0,0,0.25);
         z-index: 2002;
-        padding: 0.1rem 0 2rem 0;
         height: calc(100vh - 70px);
         overflow-y: auto;
     }
