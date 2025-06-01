@@ -29,6 +29,7 @@
                 <li><a href="#plans"><i class="fa-solid fa-layer-group"></i> VPS</a></li>
                 <li><a href="#gamehosting"><i class="fa-solid fa-gamepad"></i> Game Hosting</a></li>
                 <!-- Mobile: le voci extra sono visibili come normali voci -->
+                <!-- Mobile: extra items are visible as normal items -->
                 <li class="mobile-only mobile-extra-link"><a href="#market"><i class="fa-solid fa-chart-line"></i> Market</a></li>
                 <li class="mobile-only mobile-extra-link"><a href="#competition"><i class="fa-solid fa-trophy"></i> Competition</a></li>
                 <li class="mobile-only mobile-extra-link"><a href="#development"><i class="fa-solid fa-chart-bar"></i> Development</a></li>
@@ -36,6 +37,7 @@
                 <li class="mobile-only mobile-extra-link"><a href="#future"><i class="fa-solid fa-forward"></i> Future</a></li>
                 <li class="mobile-only mobile-extra-link"><a href="#investment"><i class="fa-solid fa-coins"></i> Investments</a></li>
                 <!-- Desktop: le voci extra sono nel dropdown -->
+                <!-- Desktop: extra items are in the dropdown -->
                 <li class="dropdown desktop-only">
                     <a href="#" class="dropdown-toggle" tabindex="0"><i class="fa-solid fa-ellipsis-h"></i> More <i class="fa-solid fa-caret-down"></i></a>
                     <ul class="dropdown-menu">
@@ -59,16 +61,17 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Slide 1: Brand, Logo, Slogan) -->
     <section class="page-title" id="home">
         <div class="title-container fade-up">
             <div class="logo" style="margin:0 auto 20px auto;">
-                <img src="img/logo.png" alt="Apollo Hosting Logo" style="width: 300px; height: 300px;">
+                <img src="img/logo.png" alt="Apollo Hosting Logo" style="width: 220px; height: 220px; border-radius: 50%; filter: drop-shadow(1px 1px 90px #2563eb33);">
             </div>
-            <h1 class="main-title"></i> Apollo Hosting</h1>
+            <h1 class="main-title" style="font-size:2.8rem;letter-spacing:0.5px;">Apollo Hosting</h1>
             <div class="title-accent"></div>
             <h2 class="title-description" style="white-space: nowrap;">
-    Made by <span class="typewriter-wrap"><span id="dynamic-word" class="typewriter">Gamers</span></span>, For <span class="typewriter-wrap"><span id="dynamic-word-2" class="typewriter">Gamers</span></span>.</h2>
+                Made by <span class="typewriter-wrap"><span id="dynamic-word" class="typewriter">Gamers</span></span>, For <span class="typewriter-wrap"><span id="dynamic-word-2" class="typewriter">Gamers</span></span>.
+            </h2>
         </div>
     </section>
 
@@ -78,7 +81,7 @@
             <div class="service-card fade-up">
                 <div class="card-icon"><i class="fa-solid fa-seedling" style="font-size: 40px; margin-bottom: 0.5rem;"></i></div>
                 <h3><i class="fa-solid fa-cube"></i> Starter</h3>
-                <p class="price">€2.50/month</p>
+                <p class="price">€4/month</p>
                 <ul class="features-list">
                     <li><i class="fa-solid fa-microchip"></i> 2 vCPU</li>
                     <li><i class="fa-solid fa-bolt"></i> 3.6GHz Frequency</li>
@@ -87,6 +90,7 @@
                     <li><i class="fa-solid fa-wifi"></i> 0.5Gbit/s Bandwidth</li>
                     <li><i class="fa-solid fa-headset"></i> 24/7 Support</li>
                     <li><i class="fa-solid fa-database"></i> 1 Backup</li>
+                    <li><i class="fa-solid fa-users"></i> Up to 60 users/server</li>
                 </ul>
                 <button class="card-btn"><i class="fa-solid fa-arrow-right"></i> Choose</button>
             </div>
@@ -94,7 +98,7 @@
                 <div class="popular-badge">Most Popular</div>
                 <div class="card-icon"><i class="fa-solid fa-bolt" style="font-size: 40px; margin-bottom: 0.5rem;"></i></div>
                 <h3><i class="fa-solid fa-rocket"></i> Pro</h3>
-                <p class="price">€6/month</p>
+                <p class="price">€8/month</p>
                 <ul class="features-list">
                     <li><i class="fa-solid fa-microchip"></i> 4 vCPU</li>
                     <li><i class="fa-solid fa-bolt"></i> 3.6GHz Frequency</li>
@@ -103,13 +107,14 @@
                     <li><i class="fa-solid fa-wifi"></i> 1Gbit/s Bandwidth</li>
                     <li><i class="fa-solid fa-headset"></i> 24/7 Support</li>
                     <li><i class="fa-solid fa-database"></i> 1 Backup</li>
+                    <li><i class="fa-solid fa-users"></i> Up to 40 users/server</li>
                 </ul>
                 <button class="card-btn"><i class="fa-solid fa-arrow-right"></i> Choose</button>
             </div>
             <div class="service-card fade-up">
                 <div class="card-icon"><i class="fa-solid fa-gem" style="font-size: 40px; margin-bottom: 0.5rem;"></i></div>
                 <h3><i class="fa-solid fa-briefcase"></i> Elite</h3>
-                <p class="price">€10/month</p>
+                <p class="price">€14/month</p>
                 <ul class="features-list">
                     <li><i class="fa-solid fa-microchip"></i> 8 vCPU</li>
                     <li><i class="fa-solid fa-bolt"></i> 3.6GHz Frequency</li>
@@ -118,9 +123,15 @@
                     <li><i class="fa-solid fa-wifi"></i> 3Gbit/s Bandwidth</li>
                     <li><i class="fa-solid fa-headset"></i> 24/7 Support</li>
                     <li><i class="fa-solid fa-database"></i> 1 Backup</li>
+                    <li><i class="fa-solid fa-users"></i> Up to 16 users/server</li>
                 </ul>
                 <button class="card-btn"><i class="fa-solid fa-arrow-right"></i> Choose</button>
             </div>
+        </div>
+        <div style="text-align:center;margin-top:2rem;">
+            <p style="color:#64748b;">
+                <strong>Server cost:</strong> €90/month &nbsp; | &nbsp; <strong>Revenue per server:</strong> €/month
+            </p>
         </div>
     </section>
 
@@ -129,56 +140,56 @@
         <div class="features-grid">
             <div class="feature-card">
                 <i class="fas fa-network-wired feature-icon"></i>
-                <h3 class="feature-title">+ 10Gbit/s Network</h3>
-                <p class="feature-description">Ultra-fast connection and instant data transfers.</p>
+                <h3 class="feature-title">Romania-based SSD Servers</h3>
+                <p class="feature-description">Ultra-fast connection, DDoS protection and low latency.</p>
             </div>
             <div class="feature-card">
                 <i class="fas fa-shield-alt feature-icon"></i>
                 <h3 class="feature-title">DDoS Protection</h3>
-                <p class="feature-description">Advanced firewall and DDoS protection on every server.</p>
+                <p class="feature-description">Advanced firewall and DDoS defense on every server.</p>
             </div>
             <div class="feature-card">
                 <i class="fas fa-headset feature-icon"></i>
                 <h3 class="feature-title">24/7 Support</h3>
-                <p class="feature-description">Italian and European technical support always available.</p>
+                <p class="feature-description">European technical support always available.</p>
             </div>
             <div class="feature-card">
                 <i class="fas fa-tachometer-alt feature-icon"></i>
-                <h3 class="feature-title">Excellent Performance</h3>
+                <h3 class="feature-title">High Performance</h3>
                 <p class="feature-description">Latest generation hardware and smart automation.</p>
             </div>
         </div>
     </section>
 
-    <!-- Team/About Section -->
+    <!-- Team/About Section (Slide 2: Team & Roles) -->
     <section id="team" class="about-section">
         <div class="container">
             <div class="about-hero-content fade-up">
-                <h2><i class="fa-solid fa-users"></i> The Apollo Hosting Team</h2>
+                <h2><i class="fa-solid fa-users"></i> Meet the Apollo Hosting Team</h2>
                 <div class="title-accent"></div>
                 <p>International experience, passion for technology and customer care.</p>
             </div>
             <div class="team-section" style="display: flex; justify-content: center;">
                 <div class="team-grid" style="justify-content: center;">
                     <div class="team-card fade-up">
-                        <img class="team-photo" src="img/archer.jpg" alt="Founder" style="width:70px;height:70px;border-radius:50%;margin-bottom:10px;">
+                        <img class="team-photo" src="img/archer.jpg" alt="Founder" style="width:80px;height:80px;border-radius:50%;margin-bottom:10px;box-shadow:0 2px 8px #2563eb33;">
                         <h4><i class="fa-solid fa-user-tie"></i> Samuele L. Carcerano</h4>
-                        <p>Founder & Developer<br><span style="color:#2b6cb0;">Vision and strategy</span></p>
+                        <p style="font-size:1.05em;"><strong>Founder & Lead Developer</strong><br><span style="color:#2b6cb0;">Vision, strategy, site developer</span></p>
                     </div>
                     <div class="team-card fade-up">
-                        <img class="team-photo" src="img/horea.jpg" alt="Co-Founder" style="width:70px;height:70px;border-radius:50%;margin-bottom:10px;">
+                        <img class="team-photo" src="img/horea.jpg" alt="Co-Founder" style="width:80px;height:80px;border-radius:50%;margin-bottom:10px;box-shadow:0 2px 8px #2563eb33;">
                         <h4><i class="fa-solid fa-user-gear"></i> Horea Groza</h4>
-                        <p>Co-Founder & Researcher<br><span style="color:#2b6cb0;">Cloud Architecture</span></p>
+                        <p style="font-size:1.05em;"><strong>Co-Founder & Researcher</strong><br><span style="color:#2b6cb0;">Research innovation</span></p>
                     </div>
                     <div class="team-card fade-up">
-                        <img class="team-photo" src="img/mircia.png" alt="Researcher" style="width:70px;height:70px;border-radius:50%;margin-bottom:10px;">
+                        <img class="team-photo" src="img/mircia.png" alt="Researcher" style="width:80px;height:80px;border-radius:50%;margin-bottom:10px;box-shadow:0 2px 8px #2563eb33;">
                         <h4><i class="fa-solid fa-user-shield"></i> Mircia Balit</h4>
-                        <p>Co-Founder & Researcher<br><span style="color:#2b6cb0;">Automation & Security</span></p>
+                        <p style="font-size:1.05em;"><strong>Co-Founder & Designer</strong><br><span style="color:#2b6cb0;">Design logos, banners, etc.</span></p>
                     </div>
                     <div class="team-card fade-up">
-                        <img class="team-photo" src="img/tomer.jpg" alt="Designer" style="width:70px;height:70px;border-radius:50%;margin-bottom:10px;">
+                        <img class="team-photo" src="img/tomer.jpg" alt="Designer" style="width:80px;height:80px;border-radius:50%;margin-bottom:10px;box-shadow:0 2px 8px #2563eb33;">
                         <h4><i class="fa-solid fa-user-pen"></i> Tomer Katz</h4>
-                        <p>Co-Founder & Designer<br><span style="color:#2b6cb0;">Communication & Brand</span></p>
+                        <p style="font-size:1.05em;"><strong>Co-Founder & Lead Marketing</strong><br><span style="color:#2b6cb0;">Communication, branding, and seller</span></p>
                     </div>
                 </div>
             </div>
@@ -247,23 +258,24 @@
     </section>
 
     <!-- Sezioni secondarie, ora più ricche e compatte -->
+    <!-- Secondary sections, now richer and more compact -->
     <section id="market" class="page-section">
         <div class="container fade-up">
-            <h2><i class="fa-solid fa-chart-line"></i> Market</h2>
+            <h2><i class="fa-solid fa-chart-line"></i> The Problem</h2>
             <div class="title-accent"></div>
             <div class="section-grid">
                 <div class="section-card">
                     <div class="section-icon" style="background:#2563eb1a;"><i class="fa-solid fa-chart-bar"></i></div>
                     <p>
-                        Hosting market analysis, growth trends, competitor comparison and opportunities for Apollo Hosting customers.<br>
-                        <strong>Highlights:</strong>
+                        Big cloud companies serve Eastern Europe from far-away data centers. That means lag, downtime, and frustrating support.<br>
+                        For gamers, developers, and small businesses—that’s a dealbreaker.
                     </p>
                     <ul>
-                        <li>Updated industry statistics</li>
-                        <li>Cloud/VPS growth forecasts</li>
-                        <li>Apollo Hosting competitive advantages</li>
+                        <li>High latency for Eastern Europe</li>
+                        <li>Unreliable support</li>
+                        <li>Unfair pricing</li>
                     </ul>
-                    <a href="#pricing" class="primary-btn" style="margin-top:1rem;">See our offers</a>
+                    <a href="#pricing" class="primary-btn" style="margin-top:1rem;">See our solution</a>
                 </div>
                 <div class="section-card section-media">
                     <img src="img/market-graph.png" alt="Hosting market graph" style="max-width:100%;border-radius:12px;box-shadow:0 2px 12px #0002;">
@@ -273,33 +285,34 @@
     </section>
     <section id="competition" class="page-section">
         <div class="container fade-up">
-            <h2><i class="fa-solid fa-trophy"></i> Competition</h2>
+            <h2><i class="fa-solid fa-trophy"></i> Our Solution</h2>
             <div class="title-accent"></div>
             <div class="section-grid">
                 <div class="section-card">
                     <div class="section-icon" style="background:#f59e421a;"><i class="fa-solid fa-medal"></i></div>
                     <p>
-                        Discover how Apollo Hosting stands out from the main hosting and VPS providers in Italy and Europe.
+                        Apollo Hosting runs SSD-based, DDoS-protected servers in Romania, with 24/7 support and a gamer-first approach.
+                        <br>Our pricing is simple and transparent.
                     </p>
                     <ul>
-                        <li>Price and performance comparison</li>
-                        <li>Customer reviews and feedback</li>
-                        <li>Innovation and exclusive services</li>
+                        <li>SSD, DDoS-protected servers in Romania</li>
+                        <li>24/7 local, gamer-first support</li>
+                        <li>Simple, fair pricing</li>
                     </ul>
                 </div>
                 <div class="section-card section-media">
                     <table>
                         <thead>
                             <tr>
-                                <th>Provider</th>
+                                <th>Plan</th>
                                 <th>Price</th>
-                                <th>Uptime</th>
+                                <th>Users/server</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>Apollo Hosting</td><td>€5/month</td><td>99.99%</td></tr>
-                            <tr><td>Competitor A</td><td>€7/month</td><td>99.9%</td></tr>
-                            <tr><td>Competitor B</td><td>€6/month</td><td>99.8%</td></tr>
+                            <tr><td>Starter</td><td>€4</td><td>Up to 60</td></tr>
+                            <tr><td>Pro</td><td>€8</td><td>Up to 40</td></tr>
+                            <tr><td>Elite</td><td>€14</td><td>Up to 16</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -308,45 +321,83 @@
     </section>
     <section id="development" class="page-section">
         <div class="container fade-up">
-            <h2><i class="fa-solid fa-chart-bar"></i> Development</h2>
+            <h2><i class="fa-solid fa-chart-bar"></i> Business Development</h2>
             <div class="title-accent"></div>
             <div class="section-grid">
                 <div class="section-card">
                     <div class="section-icon" style="background:#22d3ee1a;"><i class="fa-solid fa-code"></i></div>
                     <p>
-                        Our development solutions: automation, APIs, DevOps tools and support for custom projects.
+                        <strong>Since launch:</strong> Deployed 2 high-end servers, onboarded first clients, and automated core services.
                     </p>
-                    <ul>
-                        <li>API for VPS management</li>
-                        <li>CI/CD integration</li>
-                        <li>Technical consulting for startups</li>
-                    </ul>
+                    <p>
+                        <strong>Development plan:</strong>
+                        <ul>
+                            <li>Expand server capacity and locations</li>
+                            <li>Launch new features (API, one-click installs)</li>
+                            <li>Grow user base through partnerships and marketing</li>
+                        </ul>
+                        <strong>Key numbers:</strong>
+                        <ul>
+                            <li>Initial capital: €6,000</li>
+                            <li>Current monthly costs: €90/server</li>
+                            <li>Potential margin: €400–800+/month/server</li>
+                        </ul>
+                    </p>
                 </div>
                 <div class="section-card section-media">
-                    <div style="background:#18243a;padding:1.2rem;border-radius:10px;">
-                        <h4 style="color:#60a5fa;">API Example</h4>
-                        <code style="display:block;background:#101b34;padding:0.7em 1em;border-radius:6px;color:#fff;">POST /api/v1/vps/restart</code>
-                        <small style="color:#94a3b8;">Automate your VPS management!</small>
-                    </div>
+                    <img src="img/dev-progress.png" alt="Development Progress" style="max-width:220px;">
                 </div>
             </div>
         </div>
     </section>
     <section id="pricing" class="page-section">
         <div class="container fade-up">
-            <h2><i class="fa-solid fa-euro-sign"></i> Pricing</h2>
+            <h2><i class="fa-solid fa-euro-sign"></i> Pricing & Revenue Model</h2>
             <div class="title-accent"></div>
             <div class="section-grid">
                 <div class="section-card">
                     <div class="section-icon" style="background:#a3e6351a;"><i class="fa-solid fa-tags"></i></div>
                     <p>
-                        Transparency and convenience: check out the complete price list for all Apollo Hosting services.
+                        <strong>VPS Hosting – Complete Offer</strong>
                     </p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Plan</th>
+                                <th>Base Price<br>(Intel Xeon)</th>
+                                <th>AMD Ryzen<br>Extra</th>
+                                <th>Final Price<br>(AMD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Starter</td><td>€4.00</td><td>+€1.00</td><td>€5.00</td></tr>
+                            <tr><td>Pro</td><td>€8.00</td><td>+€2.00</td><td>€10.00</td></tr>
+                            <tr><td>Elite</td><td>€14.00</td><td>+€3.00</td><td>€17.00</td></tr>
+                        </tbody>
+                    </table>
                     <ul>
-                        <li>VPS and Game Hosting price list</li>
-                        <li>Flexible payment options</li>
-                        <li>Discounts for students and companies</li>
+                        <li><strong>Operating Systems:</strong> Linux (€0), Windows (+€3/month)</li>
+                        <li><strong>One-time Setup:</strong>
+                            <ul>
+                                <li>Pterodactyl Panel: +€2</li>
+                                <li>Minecraft: +€3</li>
+                                <li>Rust: +€4</li>
+                                <li>SCP:SL: +€3</li>
+                                <li>Ark: SE: +€4</li>
+                                <li>CS2: +€4</li>
+                            </ul>
+                        </li>
+                        <li><strong>Monthly Web Panel:</strong>
+                            <ul>
+                                <li>Minecraft: +€4/month</li>
+                                <li>Rust: +€5/month</li>
+                                <li>SCP:SL: +€4/month</li>
+                                <li>Ark: SE: +€5/month</li>
+                                <li>CS2: +€5/month</li>
+                            </ul>
+                        </li>
                     </ul>
+                    <strong>Revenue model:</strong> Recurring monthly subscriptions, with discounts for annual plans and bulk orders.
                 </div>
                 <div class="section-card section-media">
                     <div style="background:#18243a;padding:1.2rem;border-radius:10px;">
@@ -356,23 +407,79 @@
                     </div>
                 </div>
             </div>
+            <!-- Infrastructure & Costs -->
+            <div class="section-grid" style="margin-top:2rem;">
+                <div class="section-card">
+                    <div class="section-icon" style="background:#f59e421a;"><i class="fa-solid fa-server"></i></div>
+                    <h4>Infrastructure – Estimated Server Hardware Budget</h4>
+                    <ul>
+                        <li>256 GB DDR4 RAM</li>
+                        <li>8 TB SSD NVMe (RAID optional)</li>
+                        <li>Dual CPU (1x AMD Ryzen, 1x Intel Xeon)</li>
+                        <li>5 Gbps Network Uplink</li>
+                        <li>Advanced cooling</li>
+                    </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Price (estimate)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>AMD Ryzen Platform</td><td>€900</td></tr>
+                            <tr><td>Intel Xeon Platform</td><td>€1100</td></tr>
+                            <tr><td>256 GB DDR4 RAM</td><td>€800</td></tr>
+                            <tr><td>8 TB SSD (NVMe)</td><td>€900</td></tr>
+                            <tr><td>Motherboards + PSU</td><td>€500</td></tr>
+                            <tr><td>Rackmount Case + Fans</td><td>€300</td></tr>
+                            <tr><td>Cooling System</td><td>€250</td></tr>
+                            <tr><td><strong>Total Hardware</strong></td><td><strong>~€4750</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="section-card">
+                    <div class="section-icon" style="background:#a3e6351a;"><i class="fa-solid fa-bolt"></i></div>
+                    <h4>Estimated Monthly Running Costs</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Monthly Estimate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Electricity (500–650W)</td><td>€70–€90</td></tr>
+                            <tr><td>5Gbps Fiber Uplink</td><td>€100–€250</td></tr>
+                            <tr><td><strong>Total Monthly Costs</strong></td><td><strong>€200–€370</strong></td></tr>
+                        </tbody>
+                    </table>
+                    <ul>
+                        <li>Expansion: add more RAM/SSD as client base grows</li>
+                        <li>Potential colocation in data center for redundancy</li>
+                        <li>Continuous improvement of site and web panels</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
     <section id="future" class="page-section">
         <div class="container fade-up">
-            <h2><i class="fa-solid fa-forward"></i> Future</h2>
+            <h2><i class="fa-solid fa-forward"></i> Our Future Vision</h2>
             <div class="title-accent"></div>
             <div class="section-grid">
                 <div class="section-card">
                     <div class="section-icon" style="background:#818cf81a;"><i class="fa-solid fa-seedling"></i></div>
                     <p>
-                        Our roadmap: new features, international expansion, sustainability and technological innovation.
+                        <strong>Next steps:</strong>
+                        <ul>
+                            <li>Open new green data centers in Eastern Europe</li>
+                            <li>Expand to Western Europe and beyond</li>
+                            <li>Develop advanced automation and self-service tools</li>
+                            <li>Build a strong community of gamers and developers</li>
+                        </ul>
+                        <strong>Goal:</strong> Become the leading VPS and game hosting provider for the region.
                     </p>
-                    <ul>
-                        <li>New green datacenters</li>
-                        <li>Strategic partnerships</li>
-                        <li>Research and development projects</li>
-                    </ul>
                 </div>
                 <div class="section-card section-media">
                     <img src="img/datacenter-futuro.jpg" alt="Future Datacenter" style="width:100%;max-width:320px;border-radius:12px;box-shadow:0 2px 12px #0002;">
@@ -382,24 +489,44 @@
     </section>
     <section id="investment" class="page-section">
         <div class="container fade-up">
-            <h2><i class="fa-solid fa-coins"></i> Investments</h2>
+            <h2><i class="fa-solid fa-coins"></i> Financing & Investment</h2>
             <div class="title-accent"></div>
             <div class="section-grid">
                 <div class="section-card">
                     <div class="section-icon" style="background:#fde0471a;"><i class="fa-solid fa-piggy-bank"></i></div>
                     <p>
-                        Investment opportunities in Apollo Hosting: growth, transparency and returns for our partners.
+                        <strong>Current capital:</strong> €6,000 invested in high-end hardware and infrastructure.<br>
+                        <strong>Monthly costs:</strong> €90/server (hardware, connectivity, power).<br>
+                        <strong>Needs:</strong> Additional capital to expand server fleet, accelerate marketing, and automate platform.<br>
+                        <strong>Investment proposal:</strong> Seeking €10,000 for 15% equity, to reach 200+ clients and €2,000+ monthly profit within 18 months.
                     </p>
                     <ul>
-                        <li>Financial statistics</li>
-                        <li>Funded projects</li>
-                        <li>How to become an investor</li>
+                        <li>Two balanced servers for every VPS/hosting need</li>
+                        <li>Up to 10Gbit/s bandwidth</li>
+                        <li>Potential monthly margin: €400–800+/server</li>
                     </ul>
                     <a href="mailto:info@apollo-hosting.com" class="primary-btn" style="margin-top:1rem;">Contact us to invest</a>
                 </div>
                 <div class="section-card section-media">
                     <img src="img/investment.jpg" alt="Investments" style="width:100%;max-width:320px;border-radius:12px;box-shadow:0 2px 12px #0002;">
                 </div>
+            </div>
+            <div style="margin-top:2rem;">
+                <h3 style="color:#2563eb;">Why invest in Apollo Hosting?</h3>
+                <ul style="list-style: disc; margin-left: 1.5rem;">
+                    <li>
+                        <strong>Clear market need:</strong> Local, high-performance hosting is in demand.
+                    </li>
+                    <li>
+                        <strong>Scalable business model:</strong> Recurring revenue, low churn, high margins.
+                    </li>
+                    <li>
+                        <strong>Proven team:</strong> Technical, business, and design expertise.
+                    </li>
+                    <li>
+                        <strong>Growth potential:</strong> Ready to scale with the right investment.
+                    </li>
+                </ul>
             </div>
         </div>
     </section>

@@ -877,8 +877,54 @@ nav {
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
+    align-items: stretch; /* Allinea verticalmente le card */
 }
 
+.team-card {
+    flex: 1 1 220px;
+    min-width: 220px;
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 2rem;
+    background: #0f172abe;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+    /* Forza la stessa altezza per tutte */
+}
+
+.team-card:hover {
+    transform: translateY(-20px);
+}
+
+/* Allinea le card su una sola riga su desktop */
+@media (min-width: 900px) {
+    .team-grid {
+        flex-wrap: nowrap;
+    }
+    .team-card {
+        height: 100%;
+    }
+}
+
+/* Su mobile, le card vanno in colonna ma restano uguali in larghezza */
+@media (max-width: 900px) {
+    .team-grid {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .team-card {
+        min-width: 180px;
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 0;
+    }
+}
 .values-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -886,7 +932,7 @@ nav {
     margin-top: 3rem;
 }
 
-.team-card, .value-card {
+.value-card {
     padding: 2rem;
     background: #0f172abe;
     border-radius: 15px;
@@ -894,7 +940,7 @@ nav {
     transition: transform 0.3s ease;
 }
 
-.team-card:hover, .value-card:hover {
+.value-card:hover {
     transform: translateY(-20px);
 }
 
@@ -1474,7 +1520,7 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
     left: 0 !important;
   }
   .nav-links li {
-    margin: 0 0 10px 0 !important;
+    margin: 0 0 3px 0 !important;
     width: 100%;
   }
   .nav-links a {
@@ -1614,7 +1660,7 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
         background: #101b34;
         box-shadow: 0 8px 32px rgba(0,0,0,0.25);
         z-index: 2002;
-        height: 480px;
+        height: 410px;
         overflow-y: auto;
         gap: 0px !important
     }
