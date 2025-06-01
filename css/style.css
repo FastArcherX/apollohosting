@@ -376,9 +376,6 @@ nav {
     nav {
         padding: 0.5rem 0.5rem;
     }
-    .nav-links {
-        gap: 0.7rem;
-    }
     .nav-links a {
         font-size: 0.98rem;
         padding: 0.5em 0.7em;
@@ -1412,6 +1409,7 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+        gap: 0rem !important
     }
     
     .mobile-menu-btn {
@@ -1461,7 +1459,7 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
     position: fixed !important;
     top: 0 !important;
     left: -100vw !important;
-    width: 75vw !important;
+    width: 80vw !important;
     max-width: 340px !important;
     background: #101b34 !important;
     z-index: 99999 !important;
@@ -1469,10 +1467,12 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
     align-items: flex-start !important;
     justify-content: flex-start !important;
     overflow-y: auto !important;
-    margin: 0 !important;
+    margin-left: -25px !important;
     box-shadow: 2px 0 24px rgba(0,0,0,0.25) !important;
-    transition: left 0.3s cubic-bezier(.4,0,.2,1);
+    transition: left 0.2s ease-in-out;
     display: flex !important;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
   }
   .nav-links.active {
     left: 0 !important;
@@ -1489,10 +1489,10 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
     font-size: 1.1em;
     border-radius: 0;
     justify-content: flex-start;
+    gap: 10px;
   }
 }
 
-/* Su desktop, menu orizzontale */
 @media (min-width: 901px) {
   .nav-links {
     position: static !important;
@@ -1969,5 +1969,6 @@ body.no-scroll {
         min-height: 0 !important;
         padding-top: 0 !important;
         padding-bottom: 0 !important;
+        margin-bottom: -50px !important;
     }
 }
