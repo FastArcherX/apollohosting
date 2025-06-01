@@ -1407,10 +1407,6 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
 
 /* Assicura che il menu mobile appaia solo quando necessario */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        gap: 0rem !important
-    }
     
     .mobile-menu-btn {
         display: block;
@@ -1521,20 +1517,6 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
   }
 }
 
-/* --- INIZIO: RIMOZIONE E UNIFICAZIONE CODICE DUPLICATO --- */
-/* Tutte le definizioni duplicate sono state rimosse. */
-/* --- FINE: RIMOZIONE E UNIFICAZIONE CODICE DUPLICATO --- */
-
-/* --- INIZIO: COMPATTAZIONE E MIGLIORAMENTO SPAZIATURA SEZIONI SECONDARIE --- */
-/* RIMOSSO: Tutte le definizioni duplicate di .page-section, .market-content, .page-section .container, ecc. */
-/* Mantieni solo la prima versione coerente e le media query principali. */
-/* --- FINE: COMPATTAZIONE E MIGLIORAMENTO SPAZIATURA SEZIONI SECONDARIE --- */
-
-/* --- INIZIO: MEDIA QUERY OTTIMIZZATE --- */
-/* RIMOSSO: Tutte le media query duplicate per .market-content, .page-section, ecc. */
-/* Mantieni solo la prima versione coerente. */
-/* --- FINE: MEDIA QUERY OTTIMIZZATE --- */
-
 /* Assicura che il dropdown sia sempre posizionato subito sotto il tasto "Altro" */
 .nav-links .dropdown {
     position: relative;
@@ -1632,7 +1614,7 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
         background: #101b34;
         box-shadow: 0 8px 32px rgba(0,0,0,0.25);
         z-index: 2002;
-        height: calc(100vh - 70px);
+        height: 570px;
         overflow-y: auto;
     }
     .nav-links.active {
