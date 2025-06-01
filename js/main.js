@@ -280,3 +280,70 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Typewriter animation for hero section
+document.addEventListener('DOMContentLoaded', function() {
+    // Modifica qui le parole che vuoi far ruotare:
+    const words = ["Gamers", "Developers", "Creators", "Innovators", "Dreamers"];
+    let i = 0;
+    let j = 0;
+    const el1 = document.getElementById('dynamic-word');
+    const el2 = document.getElementById('dynamic-word-2');
+    const speed = 150; // ms per carattere
+    const pause = 1000; // ms di pausa tra una parola e l'altra
+
+    function typeWord(el, word, cb) {
+        let k = 0;
+        el.innerHTML = '';
+        function type() {
+            if (k < word.length) {
+                el.innerHTML = word.slice(0, k + 1) + '<span class="cursor" style="margin-left:-0.2em;">|</span>';
+                k++;
+                setTimeout(type, speed);
+            } else {
+                el.innerHTML = word + '<span class="cursor" style="margin-left:-0.2em;">|</span>';
+                setTimeout(cb, pause);
+            }
+        }
+        type();
+    }
+
+    function eraseWord(el, cb) {
+        let word = el.textContent;
+        let k = word.length;
+        function erase() {
+            if (k > 0) {
+                el.innerHTML = word.slice(0, k - 1) + '<span class="cursor" style="margin-left:-0.2em;">|</span>';
+                k--;
+                setTimeout(erase, speed / 1.5);
+            } else {
+                el.innerHTML = '<span class="cursor" style="margin-left:-0.2em;">|</span>';
+                setTimeout(cb, speed * 2);
+            }
+        }
+        erase();
+    }
+
+    function loopType() {
+        let nextI = (i + 1) % words.length;
+        let nextJ = (j + 1) % words.length;
+        eraseWord(el1, () => {
+            typeWord(el1, words[nextI], () => {
+                i = nextI;
+            });
+        });
+        eraseWord(el2, () => {
+            typeWord(el2, words[nextJ], () => {
+                j = nextJ;
+                setTimeout(loopType, pause);
+            });
+        });
+    }
+
+    // Inizializza con cursore
+    if (el1 && el2) {
+        el1.innerHTML = words[i] + '<span class="cursor" style="margin-left:-0.2em;">|</span>';
+        el2.innerHTML = words[j] + '<span class="cursor" style="margin-left:-0.2em;">|</span>';
+        setTimeout(loopType, 1500);
+    }
+});

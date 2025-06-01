@@ -495,9 +495,12 @@ nav {
     top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(15,23,42,0.7);
     z-index: 1000;
+    /* Non coprire il tasto hamburger */
+    pointer-events: auto;
 }
-.nav-links.active ~ .menu-overlay {
-    display: block;
+.mobile-menu-btn {
+    position: relative;
+    z-index: 1002; /* Più alto dell'overlay */
 }
 
 /* Migliora compattezza e layout delle sezioni secondarie */
@@ -664,7 +667,6 @@ nav {
     border-radius: 10px;
     box-shadow: 0 2px 12px #0002;
     margin: 0 auto;
-    display: block;
 }
 .section-card table {
     background: #101b34;
@@ -794,9 +796,9 @@ nav {
 }
 
 .title-description {
-    font-size: 1.1rem;
+    font-size: 2rem;
     color: var(--text-gray);
-    line-height: 1.6;
+    line-height: 1;
     margin-bottom: 2rem;
     max-width: 600px;
     margin: 0 auto;
@@ -815,7 +817,6 @@ nav {
 
 .about-hero-content {
     text-align: center;
-    margin-bottom: 4rem;
 }
 
 .about-hero-content h2 {
@@ -876,7 +877,6 @@ nav {
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
-    margin-top: 3rem;
 }
 
 .values-grid {
@@ -895,7 +895,7 @@ nav {
 }
 
 .team-card:hover, .value-card:hover {
-    transform: translateY(+50px);
+    transform: translateY(-20px);
 }
 
 /* Responsive adjustments */
@@ -1455,7 +1455,7 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
     position: fixed !important;
     top: 0 !important;
     left: -100vw !important;
-    width: 80vw !important;
+    width: 78vw !important;
     max-width: 340px !important;
     background: #101b34 !important;
     z-index: 99999 !important;
@@ -1614,8 +1614,9 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
         background: #101b34;
         box-shadow: 0 8px 32px rgba(0,0,0,0.25);
         z-index: 2002;
-        height: 570px;
+        height: 480px;
         overflow-y: auto;
+        gap: 0px !important
     }
     .nav-links.active {
         display: flex !important;
@@ -1747,6 +1748,16 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
     min-width: 120px;
     max-width: 90vw;
     text-align: center;
+}
+
+/* Animazione freccia "More" desktop: chiuso → destra, aperto → giù */
+.nav-links .dropdown-toggle .fa-caret-down {
+    transition: transform 0.25s cubic-bezier(.4,0,.2,1);
+    display: inline-block;
+    transform: rotate(-90deg); /* chiuso: punta a destra */
+}
+.nav-links .dropdown.open > .dropdown-toggle .fa-caret-down {
+    transform: rotate(0deg); /* aperto: punta in basso */
 }
 
 /* 1. Nascondi il tasto "More" solo su mobile */
@@ -1953,4 +1964,74 @@ body.no-scroll {
         padding-bottom: 0 !important;
         margin-bottom: -50px !important;
     }
+}
+
+/* Porta il bottone hamburger sopra l'overlay, ma posizionalo dopo la client-area */
+.mobile-menu-btn {
+    position: absolute;
+    top: 50%;
+    right: 1.2rem;
+    transform: translateY(-50%);
+    z-index: 1002;
+}
+
+/* Su mobile, assicurati che il bottone sia sempre visibile ma dopo la client-area
+   NON toccare le regole grafiche del dropdown menu mobile */
+@media (max-width: 900px) {
+    nav {
+        position: fixed !important;
+        top: 1rem !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: calc(100vw - 3rem) !important;
+        max-width: 1200px !important;
+        z-index: 1000 !important;
+        border-radius: 20px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+    .client-area {
+        position: relative !important;
+        z-index: 1001 !important;
+        margin-right: 56px !important; /* spazio per il bottone hamburger */
+    }
+    .mobile-menu-btn {
+        position: absolute !important;
+        top: 50% !important;
+        right: 1.2rem !important;
+        transform: translateY(-50%) !important;
+        z-index: 1002 !important;
+    }
+    .menu-overlay {
+        z-index: 1000 !important;
+    }
+    /* NON modificare le regole grafiche del dropdown menu mobile qui */
+}
+
+.typewriter-wrap {
+    display: inline-block;
+    min-width: 7ch; /* spazio minimo per evitare shift del testo fisso */
+    vertical-align: baseline;
+}
+.typewriter {
+    font-family: 'Inter', monospace;
+    letter-spacing: 0.5px;
+    position: relative;
+    white-space: nowrap;
+}
+.cursor {
+    display: inline-block;
+    width: 1ch;
+    color: #60a5fa;
+    animation: blink-cursor 0.8s steps(1) infinite;
+    font-weight: bold;
+    font-size: 1em;
+    vertical-align: baseline;
+    margin-left: -0.4em;
+    margin-right: -0.3em;
+}
+@keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
