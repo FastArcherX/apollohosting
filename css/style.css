@@ -2081,3 +2081,64 @@ body.no-scroll {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+
+/* Occhio toggle QR desktop: fixed in alto a destra sopra tutto */
+.eye-toggle.desktop-eye {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: filter 0.2s;
+    position: fixed;
+    top: 22px;
+    right: 32px;
+    z-index: 12000;
+    background: rgba(15,23,42,0.85);
+    border-radius: 50%;
+    padding: 7px;
+    box-shadow: 0 2px 12px #0004;
+    border: none;
+    outline: none;
+}
+.eye-toggle.desktop-eye i.fa-eye {
+    font-size: 32px;
+    color: #60a5fa;
+    filter: drop-shadow(0 0 2px #2563eb88);
+    transition: filter 0.2s, color 0.2s;
+}
+.eye-toggle.desktop-eye.active i.fa-eye {
+    color: #fff;
+    filter: drop-shadow(0 0 8px #60a5fa) brightness(1.2);
+}
+@media (max-width: 900px) {
+    .eye-toggle.desktop-eye {
+        display: none !important;
+    }
+}
+
+/* QR overlay: subito sotto il toggle, più grande */
+.qr-overlay {
+    display: none;
+    position: fixed;
+    top: 70px;
+    right: 32px;
+    z-index: 11999;
+    background: rgba(15,23,42,0.97);
+    border-radius: 18px;
+    box-shadow: 0 4px 32px #0008;
+    padding: 24px 24px 16px 24px;
+    animation: fadeInMenu 0.2s;
+}
+.qr-overlay .qr-img {
+    width: 260px;
+    height: 260px;
+    display: block;
+}
+.qr-overlay.show {
+    display: block;
+}
+@media (max-width: 900px) {
+    .qr-overlay {
+        display: none !important;
+    }
+}

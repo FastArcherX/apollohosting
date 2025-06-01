@@ -347,3 +347,15 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(loopType, 1500);
     }
 });
+
+// QR Eye toggle (desktop only, fixed in alto a destra)
+document.addEventListener('DOMContentLoaded', function() {
+    const eye = document.getElementById('eyeToggle');
+    const qr = document.getElementById('qrOverlay');
+    if (eye && qr) {
+        eye.addEventListener('click', function() {
+            const isActive = eye.classList.toggle('active');
+            qr.classList.toggle('show', isActive);
+        });
+    }
+});

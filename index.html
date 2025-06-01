@@ -18,6 +18,14 @@
     <meta name="keywords" content="apollo hosting, vps, cloud, game hosting, server, minecraft, rust, scpsl, ark, cs2">
 </head>
 <body>
+    <!-- QR Eye desktop: fixed in alto a destra -->
+    <button class="eye-toggle desktop-eye" id="eyeToggle" title="Show QR code" aria-label="Show QR code">
+        <i class="fa-solid fa-eye"></i>
+    </button>
+    <!-- QR code overlay (sotto il toggle, hidden by default) -->
+    <div id="qrOverlay" class="qr-overlay">
+        <img src="img/qrcode.png" alt="QR Code" class="qr-img">
+    </div>
     <div id="particles-js"></div>
     <header>
         <nav>
@@ -130,7 +138,7 @@
         </div>
         <div style="text-align:center;margin-top:2rem;">
             <p style="color:#64748b;">
-                <strong>Server cost:</strong> €90/month &nbsp; | &nbsp; <strong>Revenue per server:</strong> €/month
+                <strong>Server cost:</strong> €90/month &nbsp; | &nbsp; <strong>Revenue per server:</strong> €370/month
             </p>
         </div>
     </section>
