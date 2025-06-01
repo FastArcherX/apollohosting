@@ -24,7 +24,7 @@
     </button>
     <!-- QR code overlay (sotto il toggle, hidden by default) -->
     <div id="qrOverlay" class="qr-overlay">
-        <img src="img/qrcode.png" alt="QR Code" class="qr-img">
+        <img src="img/qrcode.png" alt="QR Code" class="qr-img" onerror="this.onerror=null;this.src='https://via.placeholder.com/260x260?text=QR';">
     </div>
     <div id="particles-js"></div>
     <header>
@@ -73,7 +73,7 @@
     <section class="page-title" id="home">
         <div class="title-container fade-up">
             <div class="logo" style="margin:0 auto 20px auto;">
-                <img src="img/logo.png" alt="Apollo Hosting Logo" style="width: 220px; height: 220px; border-radius: 50%; filter: drop-shadow(1px 1px 90px #2563eb33);">
+                <img src="img/logo.png" alt="Apollo Hosting Logo" style="width: 220px; height: 220px; border-radius: 50%; filter: drop-shadow(1px 1px 90px #2563eb33);" onerror="this.onerror=null;this.src='https://via.placeholder.com/220x220?text=Logo';">
             </div>
             <h1 class="main-title" style="font-size:2.8rem;letter-spacing:0.5px;">Apollo Hosting</h1>
             <div class="title-accent"></div>
@@ -89,7 +89,7 @@
             <div class="service-card fade-up">
                 <div class="card-icon"><i class="fa-solid fa-seedling" style="font-size: 40px; margin-bottom: 0.5rem;"></i></div>
                 <h3><i class="fa-solid fa-cube"></i> Starter</h3>
-                <p class="price">€4/month</p>
+                <p class="price">From €4/month <span style="font-size:0.9em;color:#64748b;"></span></p>
                 <ul class="features-list">
                     <li><i class="fa-solid fa-microchip"></i> 2 vCPU</li>
                     <li><i class="fa-solid fa-bolt"></i> 3.6GHz Frequency</li>
@@ -100,13 +100,13 @@
                     <li><i class="fa-solid fa-database"></i> 1 Backup</li>
                     <li><i class="fa-solid fa-users"></i> Up to 60 users/server</li>
                 </ul>
-                <button class="card-btn"><i class="fa-solid fa-arrow-right"></i> Choose</button>
+                <button class="card-btn" disabled><i class="fa-solid fa-arrow-right"></i> Coming Soon</button>
             </div>
             <div class="service-card premium fade-up">
                 <div class="popular-badge">Most Popular</div>
                 <div class="card-icon"><i class="fa-solid fa-bolt" style="font-size: 40px; margin-bottom: 0.5rem;"></i></div>
                 <h3><i class="fa-solid fa-rocket"></i> Pro</h3>
-                <p class="price">€8/month</p>
+                <p class="price">From €8/month <span style="font-size:0.9em;color:#64748b;"></span></p>
                 <ul class="features-list">
                     <li><i class="fa-solid fa-microchip"></i> 4 vCPU</li>
                     <li><i class="fa-solid fa-bolt"></i> 3.6GHz Frequency</li>
@@ -117,12 +117,12 @@
                     <li><i class="fa-solid fa-database"></i> 1 Backup</li>
                     <li><i class="fa-solid fa-users"></i> Up to 40 users/server</li>
                 </ul>
-                <button class="card-btn"><i class="fa-solid fa-arrow-right"></i> Choose</button>
+                <button class="card-btn" disabled><i class="fa-solid fa-arrow-right"></i> Coming Soon</button>
             </div>
             <div class="service-card fade-up">
                 <div class="card-icon"><i class="fa-solid fa-gem" style="font-size: 40px; margin-bottom: 0.5rem;"></i></div>
                 <h3><i class="fa-solid fa-briefcase"></i> Elite</h3>
-                <p class="price">€14/month</p>
+                <p class="price">From €14/month <span style="font-size:0.9em;color:#64748b;"></span></p>
                 <ul class="features-list">
                     <li><i class="fa-solid fa-microchip"></i> 8 vCPU</li>
                     <li><i class="fa-solid fa-bolt"></i> 3.6GHz Frequency</li>
@@ -133,12 +133,12 @@
                     <li><i class="fa-solid fa-database"></i> 1 Backup</li>
                     <li><i class="fa-solid fa-users"></i> Up to 16 users/server</li>
                 </ul>
-                <button class="card-btn"><i class="fa-solid fa-arrow-right"></i> Choose</button>
+                <button class="card-btn" disabled><i class="fa-solid fa-arrow-right"></i> Coming Soon</button>
             </div>
         </div>
         <div style="text-align:center;margin-top:2rem;">
             <p style="color:#64748b;">
-                <strong>Server cost:</strong> €90/month &nbsp; | &nbsp; <strong>Revenue per server:</strong> €370/month
+                <strong>Estimated server cost:</strong> €90/month &nbsp; | &nbsp; <strong>Potential revenue per server:</strong> €370/month
             </p>
         </div>
     </section>
@@ -169,7 +169,7 @@
         </div>
     </section>
 
-    <!-- Team/About Section (Slide 2: Team & Roles) -->
+    <!-- Team/About Section (replace team images with themed icons and bios) -->
     <section id="team" class="about-section">
         <div class="container">
             <div class="about-hero-content fade-up">
@@ -204,10 +204,10 @@
         </div>
     </section>
 
-    <!-- Game Hosting Section -->
+    <!-- Game Hosting Section (replace only undefined images with themed icons/animations, keep defined ones) -->
     <section class="service-cards" id="gamehosting">
         <div class="cards-container" style="justify-content: center;">
-            <div class="service-card fade-up">
+            <div class="service-card fade-up" style="background: linear-gradient(120deg,#232b4d 60%,#2563eb22 100%); box-shadow:0 2px 24px #2563eb22;">
                 <img class="game-img" src="img/mc.png" alt="Minecraft" style="width:60px;height:60px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;">
                 <h3><i class="fa-solid fa-cube"></i> Minecraft</h3>
                 <ul class="features-list">
@@ -216,9 +216,12 @@
                     <li><i class="fa-solid fa-database"></i> Automatic Saveslots</li>
                     <li><i class="fa-solid fa-users"></i> Unlimited slots</li>
                 </ul>
-                <button class="card-btn"><i class="fa-solid fa-cart-shopping"></i> Buy</button>
+                <div style="margin-top:10px;color:#64748b;font-size:0.98em;">
+                    Full-featured Minecraft hosting with instant modpack deployment and real-time management.
+                </div>
+                <button class="card-btn"><i class="fa-solid fa-cart-shopping"></i> Soon</button>
             </div>
-            <div class="service-card fade-up">
+            <div class="service-card fade-up" style="background: linear-gradient(120deg,#232b4d 60%,#f59e4222 100%); box-shadow:0 2px 24px #f59e4222;">
                 <img class="game-img" src="img/rust.png" alt="Rust" style="width:60px;height:60px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;">
                 <h3><i class="fa-solid fa-fire"></i> Rust</h3>
                 <ul class="features-list">
@@ -227,9 +230,12 @@
                     <li><i class="fa-solid fa-shield-halved"></i> Cheat Protection</li>
                     <li><i class="fa-solid fa-puzzle-piece"></i> Plugin Management</li>
                 </ul>
-                <button class="card-btn"><i class="fa-solid fa-cart-shopping"></i> Buy</button>
+                <div style="margin-top:10px;color:#64748b;font-size:0.98em;">
+                    Secure and customizable Rust servers with advanced anti-cheat and plugin support.
+                </div>
+                <button class="card-btn"><i class="fa-solid fa-cart-shopping"></i> Soon...</button>
             </div>
-            <div class="service-card fade-up">
+            <div class="service-card fade-up" style="background: linear-gradient(120deg,#232b4d 60%,#22d3ee22 100%); box-shadow:0 2px 24px #22d3ee22;">
                 <img class="game-img" src="img/scpsl.png" alt="SCP:SL" style="width:60px;height:60px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;">
                 <h3><i class="fa-solid fa-flask"></i> SCP:SL</h3>
                 <ul class="features-list">
@@ -238,9 +244,12 @@
                     <li><i class="fa-solid fa-download"></i> Exiled setup</li>
                     <li><i class="fa-solid fa-puzzle-piece"></i> Plugin Management</li>
                 </ul>
-                <button class="card-btn"><i class="fa-solid fa-cart-shopping"></i> Buy</button>
+                <div style="margin-top:10px;color:#64748b;font-size:0.98em;">
+                    Fast, reliable SCP:SL hosting with plugin and Exiled support for custom gameplay.
+                </div>
+                <button class="card-btn"><i class="fa-solid fa-cart-shopping"></i> Soon...</button>
             </div>
-            <div class="service-card fade-up">
+            <div class="service-card fade-up" style="background: linear-gradient(120deg,#232b4d 60%,#a3e63522 100%); box-shadow:0 2px 24px #a3e63522;">
                 <img class="game-img" src="img/ark.png" alt="ARK" style="width:60px;height:60px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;">
                 <h3><i class="fa-solid fa-volcano"></i> ARK: Survival Evolved</h3>
                 <ul class="features-list">
@@ -249,9 +258,12 @@
                     <li><i class="fa-solid fa-puzzle-piece"></i> Steam Workshop Mods Istaller</li>
                     <li><i class="fa-solid fa-gauge-high"></i> Seed Loader</li>
                 </ul>
-                <button class="card-btn"><i class="fa-solid fa-cart-shopping"></i> Buy</button>
+                <div style="margin-top:10px;color:#64748b;font-size:0.98em;">
+                    Clustered ARK hosting with mod support and high-performance resources for large communities.
+                </div>
+                <button class="card-btn"><i class="fa-solid fa-cart-shopping"></i> Soon...</button>
             </div>
-            <div class="service-card fade-up">
+            <div class="service-card fade-up" style="background: linear-gradient(120deg,#232b4d 60%,#60a5fa22 100%); box-shadow:0 2px 24px #60a5fa22;">
                 <img class="game-img" src="img/cs2.png" alt="CS2" style="width:60px;height:60px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;">
                 <h3><i class="fa-solid fa-gun"></i> Counter-Strike 2</h3>
                 <ul class="features-list">
@@ -260,7 +272,10 @@
                     <li><i class="fa-solid fa-shield-halved"></i> Advanced anti-cheat</li>
                     <li><i class="fa-solid fa-trophy"></i> Tournament support</li>
                 </ul>
-                <button class="card-btn"><i class="fa-solid fa-cart-shopping"></i> Buy</button>
+                <div style="margin-top:10px;color:#64748b;font-size:0.98em;">
+                    Tournament-ready CS2 servers with advanced anti-cheat and real-time management.
+                </div>
+                <button class="card-btn"><i class="fa-solid fa-cart-shopping"></i> Soon...</button>
             </div>
         </div>
     </section>
@@ -285,8 +300,24 @@
                     </ul>
                     <a href="#pricing" class="primary-btn" style="margin-top:1rem;">See our solution</a>
                 </div>
-                <div class="section-card section-media">
-                    <img src="img/market-graph.png" alt="Hosting market graph" style="max-width:100%;border-radius:12px;box-shadow:0 2px 12px #0002;">
+                <div class="section-card section-media" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
+                    <div style="width:100%;max-width:340px;height:180px;display:flex;align-items:center;justify-content:center;">
+                        <svg width="100%" height="100%" viewBox="0 0 340 180" style="background:transparent;">
+                            <polyline points="10,170 60,120 110,140 160,90 210,110 260,60 310,80"
+                                fill="none" stroke="#2563eb" stroke-width="4">
+                                <animate attributeName="points" dur="2s" repeatCount="indefinite"
+                                    values="10,170 60,120 110,140 160,90 210,110 260,60 310,80;
+                                            10,170 60,130 110,120 160,100 210,90 260,70 310,60;
+                                            10,170 60,120 110,140 160,90 210,110 260,60 310,80"/>
+                            </polyline>
+                            <circle cx="310" cy="80" r="8" fill="#60a5fa">
+                                <animate attributeName="cy" values="80;60;80" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+                        </svg>
+                    </div>
+                    <div style="margin-top:1rem;color:#64748b;">
+                        <strong>Hosting demand is rising fast in Eastern Europe.<br>Be ready for the next wave.</strong>
+                    </div>
                 </div>
             </div>
         </div>
@@ -299,13 +330,13 @@
                 <div class="section-card">
                     <div class="section-icon" style="background:#f59e421a;"><i class="fa-solid fa-medal"></i></div>
                     <p>
-                        Apollo Hosting runs SSD-based, DDoS-protected servers in Romania, with 24/7 support and a gamer-first approach.
-                        <br>Our pricing is simple and transparent.
+                        Apollo Hosting will offer SSD servers, DDoS protection, in Romania, with 24/7 support and a gamer-first approach.
+                        <br>Our offer will be simple and transparent.
                     </p>
                     <ul>
-                        <li>SSD, DDoS-protected servers in Romania</li>
-                        <li>24/7 local, gamer-first support</li>
-                        <li>Simple, fair pricing</li>
+                        <li>SSD servers with DDoS protection in Romania</li>
+                        <li>24/7 local, gamer-oriented support</li>
+                        <li>Simple plans and fair pricing</li>
                     </ul>
                 </div>
                 <div class="section-card section-media">
@@ -335,25 +366,28 @@
                 <div class="section-card">
                     <div class="section-icon" style="background:#22d3ee1a;"><i class="fa-solid fa-code"></i></div>
                     <p>
-                        <strong>Since launch:</strong> Deployed 2 high-end servers, onboarded first clients, and automated core services.
+                        <strong>At launch:</strong> We plan to deploy 2 high-end servers, onboard our first clients, and automate core services.
                     </p>
                     <p>
                         <strong>Development plan:</strong>
                         <ul>
                             <li>Expand server capacity and locations</li>
                             <li>Launch new features (API, one-click installs)</li>
-                            <li>Grow user base through partnerships and marketing</li>
+                            <li>Grow through partnerships and marketing</li>
                         </ul>
-                        <strong>Key numbers:</strong>
+                        <strong>Key numbers (projections):</strong>
                         <ul>
-                            <li>Initial capital: €6,000</li>
-                            <li>Current monthly costs: €90/server</li>
+                            <li>Initial capital planned: €6,000</li>
+                            <li>Estimated monthly costs: €90/server</li>
                             <li>Potential margin: €400–800+/month/server</li>
                         </ul>
                     </p>
                 </div>
-                <div class="section-card section-media">
-                    <img src="img/dev-progress.png" alt="Development Progress" style="max-width:220px;">
+                <div class="section-card section-media" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
+                    <img src="img/spoiler.png" alt="Development Progress" style="scale:115%; width:100%;max-width:320px;border-radius:12px;box-shadow:0 2px 12px #0002;">
+                    <div style="margin-top:1rem;color:#64748b;">
+                        <strong>Real web panel preview: Pterodactyl for full control and automation.</strong>
+                    </div>
                 </div>
             </div>
         </div>
@@ -366,7 +400,7 @@
                 <div class="section-card">
                     <div class="section-icon" style="background:#a3e6351a;"><i class="fa-solid fa-tags"></i></div>
                     <p>
-                        <strong>VPS Hosting – Complete Offer</strong>
+                        <strong>VPS Hosting – Planned Offer</strong>
                     </p>
                     <table>
                         <thead>
@@ -405,7 +439,7 @@
                             </ul>
                         </li>
                     </ul>
-                    <strong>Revenue model:</strong> Recurring monthly subscriptions, with discounts for annual plans and bulk orders.
+                    <strong>Planned revenue model:</strong> Recurring monthly subscriptions, with discounts for annual plans and bulk orders.
                 </div>
                 <div class="section-card section-media">
                     <div style="background:#18243a;padding:1.2rem;border-radius:10px;">
@@ -419,7 +453,7 @@
             <div class="section-grid" style="margin-top:2rem;">
                 <div class="section-card">
                     <div class="section-icon" style="background:#f59e421a;"><i class="fa-solid fa-server"></i></div>
-                    <h4>Infrastructure – Estimated Server Hardware Budget</h4>
+                    <h4>Infrastructure – Estimated server hardware budget</h4>
                     <ul>
                         <li>256 GB DDR4 RAM</li>
                         <li>8 TB SSD NVMe (RAID optional)</li>
@@ -448,7 +482,7 @@
                 </div>
                 <div class="section-card">
                     <div class="section-icon" style="background:#a3e6351a;"><i class="fa-solid fa-bolt"></i></div>
-                    <h4>Estimated Monthly Running Costs</h4>
+                    <h4>Estimated monthly running costs</h4>
                     <table>
                         <thead>
                             <tr>
@@ -489,8 +523,24 @@
                         <strong>Goal:</strong> Become the leading VPS and game hosting provider for the region.
                     </p>
                 </div>
-                <div class="section-card section-media">
-                    <img src="img/datacenter-futuro.jpg" alt="Future Datacenter" style="width:100%;max-width:320px;border-radius:12px;box-shadow:0 2px 12px #0002;">
+                <div class="section-card section-media" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
+                    <div style="width:120px;height:120px;display:flex;align-items:center;justify-content:center;">
+                        <svg width="120" height="120" viewBox="0 0 120 120">
+                            <rect x="20" y="30" width="80" height="60" rx="12" fill="#18243a" stroke="#a3e635" stroke-width="3"/>
+                            <rect x="35" y="45" width="50" height="10" rx="3" fill="#a3e635">
+                                <animate attributeName="fill" values="#a3e635;#60a5fa;#a3e635" dur="2s" repeatCount="indefinite"/>
+                            </rect>
+                            <rect x="35" y="65" width="50" height="10" rx="3" fill="#a3e635">
+                                <animate attributeName="fill" values="#a3e635;#22d3ee;#a3e635" dur="2s" repeatCount="indefinite" begin="1s"/>
+                            </rect>
+                            <circle cx="60" cy="90" r="8" fill="#60a5fa">
+                                <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+                        </svg>
+                    </div>
+                    <div style="margin-top:1rem;color:#64748b;">
+                        <strong>Green datacenters and sustainable infrastructure for tomorrow's cloud.</strong>
+                    </div>
                 </div>
             </div>
         </div>
@@ -503,10 +553,10 @@
                 <div class="section-card">
                     <div class="section-icon" style="background:#fde0471a;"><i class="fa-solid fa-piggy-bank"></i></div>
                     <p>
-                        <strong>Current capital:</strong> €6,000 invested in high-end hardware and infrastructure.<br>
-                        <strong>Monthly costs:</strong> €90/server (hardware, connectivity, power).<br>
-                        <strong>Needs:</strong> Additional capital to expand server fleet, accelerate marketing, and automate platform.<br>
-                        <strong>Investment proposal:</strong> Seeking €10,000 for 15% equity, to reach 200+ clients and €2,000+ monthly profit within 18 months.
+                        <strong>Planned capital:</strong> €6,000 to be invested in high-end hardware and infrastructure.<br>
+                        <strong>Estimated monthly costs:</strong> €90/server (hardware, connectivity, power).<br>
+                        <strong>Needs:</strong> Additional capital to expand the server fleet, accelerate marketing, and automate the platform.<br>
+                        <strong>Investment proposal:</strong> Seeking €10,000 for 15% equity, aiming to reach 200+ clients and €2,000+ monthly profit within 18 months.
                     </p>
                     <ul>
                         <li>Two balanced servers for every VPS/hosting need</li>
@@ -515,8 +565,22 @@
                     </ul>
                     <a href="mailto:info@apollo-hosting.com" class="primary-btn" style="margin-top:1rem;">Contact us to invest</a>
                 </div>
-                <div class="section-card section-media">
-                    <img src="img/investment.jpg" alt="Investments" style="width:100%;max-width:320px;border-radius:12px;box-shadow:0 2px 12px #0002;">
+                <div class="section-card section-media" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
+                    <div style="width:120px;height:120px;display:flex;align-items:center;justify-content:center;">
+                        <svg width="120" height="120" viewBox="0 0 120 120">
+                            <ellipse cx="60" cy="80" rx="35" ry="18" fill="#fde047" opacity="0.7"/>
+                            <ellipse cx="60" cy="80" rx="35" ry="18" fill="#fde047" opacity="0.7">
+                                <animate attributeName="cy" values="80;70;80" dur="1.5s" repeatCount="indefinite"/>
+                            </ellipse>
+                            <circle cx="60" cy="60" r="28" fill="#fde047" stroke="#f59e42" stroke-width="4">
+                                <animate attributeName="r" values="28;32;28" dur="1.5s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="60" y="68" text-anchor="middle" font-size="28" fill="#f59e42" font-weight="bold" font-family="Arial">€</text>
+                        </svg>
+                    </div>
+                    <div style="margin-top:1rem;color:#64748b;">
+                        <strong>Invest in scalable, high-margin hosting for the next generation of cloud services.</strong>
+                    </div>
                 </div>
             </div>
             <div style="margin-top:2rem;">
