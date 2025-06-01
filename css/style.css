@@ -920,9 +920,14 @@ nav {
     }
     .team-card {
         min-width: 180px;
+        height: 200px !important;
         max-width: 100%;
         width: 100%;
         margin-bottom: 0;
+        /* fix: separa le card dal resto con margine inferiore */
+        margin-bottom: 1.5rem;
+        z-index: 2;
+        position: relative;
     }
 }
 .values-grid {
@@ -1726,6 +1731,7 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
     .team-card {
         padding: 1.2rem 0.7rem;
         font-size: 0.98rem;
+        height: 200px;
     }
     .service-cards {
         padding: 1.2rem 0.5rem;
@@ -1777,8 +1783,12 @@ header *, .page-title *, .service-cards *, .features *, .about-section *, .page-
     .section-card {
         font-size: 0.95rem;
     }
-    .feature-card, .team-card {
+    .feature-card {
         font-size: 0.95rem;
+    }
+    .team-card {
+        font-size: 0.95rem;
+        height: 200px;
     }
     .main-title {
         font-size: 1.2rem;
@@ -2141,4 +2151,51 @@ body.no-scroll {
     .qr-overlay {
         display: none !important;
     }
+}
+
+/* Su mobile, separa visivamente le sezioni team e gamehosting */
+@media (max-width: 900px) {
+    .about-section {
+        margin-bottom: 2.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+    .team-section {
+        margin-bottom: 1.5rem !important;
+    }
+    .team-grid {
+        margin-bottom: 0 !important;
+    }
+    .team-card {
+        margin-bottom: 1.5rem;
+        z-index: 2;
+        position: relative;
+    }
+    /* Aggiungi spazio sopra la sezione gamehosting */
+    #gamehosting {
+        margin-top: 2.5rem !important;
+        padding-top: 1.2rem !important;
+    }
+}
+
+/* Su desktop, assicurati che le sezioni siano ben separate */
+@media (min-width: 901px) {
+    .about-section {
+        margin-bottom: 3rem !important;
+        padding-bottom: 2rem !important;
+    }
+    #gamehosting {
+        margin-top: 3rem !important;
+        padding-top: 2rem !important;
+    }
+}
+
+/* Fix generale per evitare overlap tra sezioni */
+.about-section,
+#team {
+    position: relative;
+    z-index: 3;
+}
+#gamehosting {
+    position: relative;
+    z-index: 2;
 }
